@@ -12,6 +12,7 @@ module.exports = {
         'blackish' : '#232526'
       },
       boxShadow: {
+        'cool': '5px 7px 0px 0px rgb(17 24 49)',
         'cool-effect': '0 5px 0 #58a700',
         'cool-effect2': '0 0 0 #58a700',
       },
@@ -25,5 +26,7 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 }

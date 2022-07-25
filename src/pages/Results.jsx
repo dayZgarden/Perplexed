@@ -1,5 +1,7 @@
+import {EyeIcon,  MapIcon,  MoonIcon,  PencilIcon,  PuzzleIcon,  ScaleIcon,  UserIcon,  XCircleIcon,  } from '@heroicons/react/solid';
+import { UsersIcon } from '@heroicons/react/solid';
 import { sendSignInLinkToEmail } from 'firebase/auth';
-import React from 'react'
+import React, {useState} from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import Question from '../components/Question';
 
@@ -15,11 +17,27 @@ export default function Results() {
     console.log(choices)
     console.log(questions)
 
+    const[eye, setEye] = useState(false)
+
+    function toggleResults() {
+      setEye(!eye)
+    }
+
   return (
-    <div className='h-screen bg-idk2 bg-center bg-cover min-h-full'>
-        <div className='text-white backdrop-blur-xl backdrop-opacity-70 flex-col flex items-center justify-center h-full'>
-            <h1 className='tracking-wide font-bold text-[36px]'>Your points: {points}</h1>
-            <p className='tracking-wide font-bold text-[36px]'>Your score: {score} / 10</p>
+    <div className='scrollbar-hide h-screen bg-idk2 bg-center bg-cover min-h-full'>
+      <div className='flex flex-col justify-evenly h-full'>
+        {!eye &&<div className='text-white backdrop-blur-xl justify-evenly  backdrop-opacity-70 flex-col flex items-center h-full'>
+            {/* <h1 className='tracking-wide font-bold text-[36px]'>Your points: {points}</h1> */}
+            <div className='flex-col tracking-wide font-bold rounded-[50%] bg-yellow-300 text-gray-900 w-[340px] p-16 flex items-center
+            justify-center h-[340px] border-4 border-gray-900 text-[86px]'>
+              <div>
+                {score}
+              </div>
+              <div className='w-full border-b-2 border-gray-900'></div>
+              <div>
+                10
+              </div>
+            </div>
             <Link to = {{
               pathname: '/genres'
             }} className="active:scale-95 hover:scale-105 transition-all duration-500 relative inline-block text-lg group">
@@ -29,18 +47,27 @@ export default function Results() {
               <span className="relative text-[24px] font-bold tracking-wide">Play Again</span></span>
               <span className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
             </Link>
-            <div className='absolute bottom-5 left-50% translate-x--50%'> - Details - </div>
+            <button onClick={toggleResults} className='z-50 cursor-pointer 
+            hover:scale-105 active:scale-95  transiton-all duration-500
+            fixed bg-yellow-300 rounded-[22%] text-gray-900 blur-[5%] hover:blur-none border-2 p-1 border-gray-900 overflow-hidden flex-1 shadow-cool w-20 h-20 active:shadow-sm  top-14 left-50% -translate-x-50%'><EyeIcon/></button>
+            <button onClick={toggleResults} className='z-50 cursor-pointer 
+            hover:scale-105 active:scale-95  transiton-all duration-500
+            fixed bg-yellow-300 rounded-[22%] text-gray-900 blur-[5%] hover:blur-none border-2 p-1 border-gray-900 overflow-hidden flex-1 shadow-cool w-20 h-20 active:shadow-sm  top-10 left-[55%] -translate-x-50%'><ScaleIcon/></button>
+            <button onClick={toggleResults} className='z-50 cursor-pointer 
+            hover:scale-105 active:scale-95  transiton-all duration-500
+            fixed bg-yellow-300 rounded-[22%] text-gray-900 blur-[5%] hover:blur-none border-2 p-1 border-gray-900 overflow-hidden flex-1 shadow-cool w-20 h-20 active:shadow-sm  top-10 left-[40%] -translate-x-50%'><UserIcon/></button>
+        </div>}
         </div>
-        <div className='text-white flex flex-col m-2'>
-          <div>
+        {eye && <div className='bg-black absolute inset-0 overflow-scroll scrollbar-hide'>
+        <button onClick={toggleResults} className='z-50 cursor-pointer 
+          hover:scale-105 active:scale-95 transiton-all duration-500
+           absolute text-white w-16 h-16 top-5 right-5 -translate-x-50%'><XCircleIcon/></button>
+          <div className='text-white flex flex-col m-2'>
             {
               <Question question= {questions} choice={choices} right={rights}/>
             }
             </div>
-          {/* <div>This is your answer component</div>
-          <div>This is correct answer component</div> */}
-          
-        </div>
+        </div>}
     </div>
   )
 }

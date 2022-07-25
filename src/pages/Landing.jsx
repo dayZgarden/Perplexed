@@ -139,7 +139,7 @@ export default function Landing() {
     },[y])
  
   return (
-    <div className='h-screen bg-idk4 bg-cover bg-center '>
+    <div className='h-screen bg-cover bg-center '>
         <div className='backdrop-blur-2xl backdrop-brightness-95 backdrop-opacity-70 h-full'>
         {(!modal && !wrongModal) && <div className='text-white  text-[48px] font-bold tracking-wide text-center  p-4'>{title} | {x+1} of 10 | Points: {points}</div>}
         <button onClick={()=> navigate('/genres')} className='fixed cursor-pointer hover:scale-105 active:scale-90 hover:bg-purple-400  top-6 right-6 w-12 h-12 text-white
@@ -147,7 +147,7 @@ export default function Landing() {
         
        
 
-        {modal && <div className='h-screen bg-idk  bg-cover bg-center flex justify-center items-center
+        {modal && <div className='h-screen bg-idk bg-cover bg-center flex justify-center items-center
         text-white flex-col '>
             <div className='h-full backdrop-blur-xl w-full flex flex-col items-center justify-center'>
                  {choice && 
@@ -182,15 +182,15 @@ export default function Landing() {
             </div>
             </div>}
         {(!modal && !wrongModal) && <div className='text-white font-bold flex items-center justify-center flex-col'>
-            <div className="backdrop-blur-sm m-20 py-8 px-6 max-w-1200 border-l-2 border-r-2 text-[36px] rounded-lg">
+            <div className="backdrop-blur-sm m-10 py-8 px-6 max-w-1200 border-l-2 border-r-2 text-[36px] rounded-lg">
                 {results.question?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
             </div>
             <div className='flex'>
                 <div className="flex p-4 flex-wrap justify-center">
                     { cards?.map((option)=> (
-                        <div className='w-[700px] max-w-full active:animate-ping-once relative m-4 flex flex-col  justify-center items-center'>
+                        <div className='w-1/3 max-w-[700px] active:animate-ping-once relative m-4 flex flex-col  justify-center items-center'>
                             <div className=' 
-                             relative w-full flex items-center break-all  bg-gradient-to-b from-orange-300 via-pink-600 to bg-blue-600 flex-wrap hover:bg-gradient-to-b active:scale-95 hover:scale-105 transition-all duration-300 bg-center rounded-[20%] leading-none'>
+                             relative w-full flex items-center break-all  bg-gradient-to-b from-orange-300 via-purple-600 to bg-gray-600 flex-wrap hover:bg-gradient-to-b active:scale-95 hover:scale-105 transition-all duration-300 bg-center rounded-[20%] leading-none'>
                                 <input type="button" className='text-[42px] text-white transition-all duration-300 flex-1 cursor-pointer brightness-105 w-full p-20 m-2' value={option} onClick={picked} placeholder={option?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}/>
                             </div>
                         </div>
