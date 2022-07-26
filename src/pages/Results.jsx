@@ -69,7 +69,7 @@ export default function Results() {
         {eye && <div className='bg-black absolute inset-0 overflow-scroll scrollbar-hide'>
         <button onClick={toggleResults} className='z-50 cursor-pointer 
           hover:scale-105 active:scale-95 transiton-all duration-500
-           absolute text-white w-16 h-16 top-5 right-5 -translate-x-50%'><XCircleIcon/></button>
+           fixed text-white w-16 h-16 top-5 right-5 -translate-x-50%'><XCircleIcon/></button>
           <div className='text-white flex flex-col '>
             {
               <Question question= {questions} choice={choices} right={rights}/>

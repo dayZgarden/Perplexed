@@ -2,6 +2,10 @@ import { CheckIcon, XIcon } from '@heroicons/react/solid'
 import React, {useState, useEffect} from 'react'
 
 export default function Question({question, choice, right}) {
+
+    console.log(question)
+    console.log(choice)
+    console.log(right)
     
     const obj = {}
     for(let i = 0; i < 10; i++){
