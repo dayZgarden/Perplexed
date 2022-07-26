@@ -21,8 +21,9 @@ module.exports = {
         'idk2': 'url(https://images.pexels.com/photos/1601774/pexels-photo-1601774.jpeg?auto=compress&cs=tinysrgb&w=1600)',
         'idk3': 'url(https://r1.ilikewallpaper.net/ipad-wallpapers/download-103923/abstract-lightning-effect-4k_2732x2732.jpg)',
         'idk4': 'url(https://i.pinimg.com/originals/8e/4e/51/8e4e512c33592690f2695a50ec13481c.png)',
-        'idk5': 'url(https://garden.spoonflower.com/c/10875479/p/f/m/lSX4I-jgmB8K9wDUBzxi526l9EkAki9hACMiUKs9AHwocw--4Yf3qJ5n8Q/Arcade%20Floor%20Galaxy.jpg)',
-        'gameover' : 'url(https://image.shutterstock.com/image-vector/neon-illustration-arcade-game-machine-260nw-1730840356.jpg)'
+        'idk5': 'url(https://images.pexels.com/photos/4835419/pexels-photo-4835419.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+        'gameover' : 'url(https://image.shutterstock.com/image-vector/neon-illustration-arcade-game-machine-260nw-1730840356.jpg)',
+        'general' : 'url(https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2019/12/23173546/Basic-General-Knowledge-for-Competitive-Exams-.jpg)'
       }
     },
   },

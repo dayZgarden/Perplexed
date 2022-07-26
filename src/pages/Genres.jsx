@@ -19,17 +19,22 @@ export default function Genres() {
 
 
   return (
-    <div className='h-full'>
+    <div className='h-full bg-blackish'>
         <div className='h-full'>
             <h1 className='text-white text-center pt-12 text-[52px] font-bold, tracking-wide uppercase'>Choose any Genre</h1>
-            <div className='h-4/5 my-6 flex justify-center items-center flex-wrap'>
+            <div className='h-4/5 m-6 flex justify-center items-center flex-wrap'>
             {Object.entries(requests).map(([key, {title, url}]) => (
-                <button key={key} onClick={()=>handleClick(url, title)}
-                className='relative px-5 py-3 overflow-hidden  order shadow-inner group bg-white cursor-pointer p-10 bg-transparent odd:border-b-2 even:border-t-2 text-white tracking-wide hover:text-black hover:bg-white rounded-[17%] hover:scale-105 active:scale-95
-                transition-all duration-500 m-6  active:text-white w-1/4 text-[36px] font-bold'>
+                // <button key={key} onClick={()=>handleClick(url, title)}
+                <div key={key} onClick={()=>handleClick(url, title)} className='cursor-pointer 
+                hover:scale-105 active:scale-95 transiton-all duration-500
+               bg-white rounded-[50%] w-1/4 h-[460px] tracking-wide 
+               blur-[5%] bg-general bg-center bg-cover
+               hover:blur-none m-6 overflow-hidden shadow-cool active:shadow-sm group '>
+                <div className=' h-full w-full text-[56px] font-extrabold flex items-center 
+                group-hover:opacity-100 text-gray-900 group-hover:backdrop-blur-lg opacity-[15%] justify-center text-center transition-all duration-300'>
                     {title}
-                </button> 
-
+                </div> 
+            </div>
             ))}
             </div>
         </div>

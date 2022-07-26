@@ -1,7 +1,7 @@
 export default {
     fetchGeneralKnowledge: {
         title: 'General Knowledge',
-        url: '&category=9&difficulty=medium&type=multiple'
+        url: '&category=9&difficulty=medium&type=multiple',
     },
     fetchBooks: {
         title: 'Books',

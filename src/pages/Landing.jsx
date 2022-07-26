@@ -30,9 +30,11 @@ export default function Landing() {
     const query = location.state.query;
     const title = location.state.title
     console.log(query)
+    let q = query.toString().replace('medium', 'easy')
+    console.log(q)
  
     async function getQuestions() {
-        const { data } = await axios.get(`https://opentdb.com/api.php?amount=10${query}`)
+        const { data } = await axios.get(`https://opentdb.com/api.php?amount=10${q}`)
         console.log(data.results)
         setResults(data.results[x]);
     }

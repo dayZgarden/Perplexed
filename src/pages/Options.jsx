@@ -1,21 +1,19 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useRef} from 'react'
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 
 export default function Options() {
     const location = useLocation();
-    const profile = location.state.profile
+    const profile = useRef(location.state?.profile)
     const navigate = useNavigate();
 
     useEffect(() => {
         console.log(profile)
     }, [profile])
 
-
-
   return (
     //fade in the user
     <div className='text-white h-screen text-center flex  items-center'>
-        <h1 className='m-2 text-[48px] w-1/2'>Welcome, {profile}</h1>
+        <h1 className='m-2 text-[48px] w-1/2'>Welcome, {profile.current} </h1>
         <div className='text-white flex flex-col h-screen justify-center items-center bg-gradient-to-l from-gray-600 via-slate-400 to-stone-500 bg-center bg-cover w-1/2'>
             <Link to = {{
               pathname: '/genres'
