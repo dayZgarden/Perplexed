@@ -13,7 +13,6 @@ export default function Landing() {
     const [choice, setChoice] = useState(false)
     const [wrongChoice, setWrongChoice] = useState(false);
     const [modal, setModal] = useState(false)
-    const [wrongModal, setWrongModal] = useState(false)
     const [x, setX] = useState(0)
     const [y, setY] = useState(0)
     const [pick, setPick] = useState()
@@ -34,7 +33,7 @@ export default function Landing() {
     const title = location.state.title
  
     async function getQuestions() {
-        const { data } = await axios.get(`https://opentdb.com/api.php?amount=10${q}`)
+        const { data } = await axios.get(`https://opentdb.com/api.php?amount=10${query}`)
         setResults(data.results[x]);
     }
 
@@ -56,7 +55,7 @@ export default function Landing() {
     }
  
     useEffect(() => {
-        setQ(query.toString().replace('medium', 'easy'))
+        // setQ(query.toString().replace('medium', 'easy'))
         getQuestions();
     },[])
 
@@ -109,11 +108,6 @@ export default function Landing() {
         setModal(!modal)
         setX(x + 1);
     }
- 
-    function toggleWrongModal() {
-        setWrongModal(!wrongModal)
-        setX(x+1)
-    }
 
     const picked = event => {
         event.preventDefault();
@@ -159,41 +153,47 @@ export default function Landing() {
                                 cursor-default bg-orange-400 transiton-all duration-300
                                  rounded-[1%] flex-1 text-[42px] font-bold text-gray-900 border-2 flex items-center justify-center
                                   border-gray-900 overflow-hidden 
-                                shadow-cool active:shadow-sm max-w-[1000px] mx-auto h-[100px] text-[42px] font-extrabold tracking-wide text-center p-4'>{title} | {x+1} of 10 | Points: {points}</div>}
+                                shadow-cool active:shadow-sm max-w-[1000px] mx-auto h-[140px] tracking-wide text-center p-4'>{title} | {x+1} of 10 | Points: {points}</div>}
         {!modal && <button onClick={()=> setExit(!exit)} className='fixed cursor-pointer hover:scale-105 active:scale-90 hover:bg-purple-400  top-6 right-6 w-12 h-12 text-gray-900
         transition-all duration-300 bg-yellow-300 border-gray-900 border-4'><XIcon/></button>}
 
-        {(modal) && <div className='h-[103vh] bg-idk bg-center bg-cover flex justify-center items-center
+        {(modal) && <div className='h-[103vh] bg-dark2 bg-center bg-fill flex justify-center items-center
         text-white flex-col '>
-            <div className='h-full backdrop-blur-lg backdrop-opacity-70 w-full flex flex-col items-center justify-center'>
+            <div className='h-full backdrop-blur-lg backdrop-opacity-90 w-full flex flex-col items-center justify-center'>
                     {(pick === correct) ? 
-                    <div className='text-[48px] tracking-wider'>
-                        CORRECT
+                    <div className='w-[60%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[48px] border-4 border-gray-900 shadow-cool mb-8 p-4 '>
+                        Correct Answer
                     </div>
                     : 
-                    <div className='text-center'>
-                        <div className='text-[64px] font-bold tracking-wider'>Incorrect Answer</div>
-                        <div className='text-[36px] text-white'>The correct answer was: {correct}</div>
-                        <div className='text-[36px] text-white'>You chose: {pick}</div>
+                    <div className=' w-full flex flex-col items-center'>
+                        <div className='text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 w-[60%]'>Incorrect Answer</div>
+                        <div className=' p-6 m-6  border-2 border-gray-900  shadow-cool rounded-[7%] flex bg-gray-50 brightness-90 text-gray-900 max-w-[850px] mx-auto'>
+                                 <div className=' h-full tracking-wider font-extrabold w-full bg-transparent rounded-[10%] p-4 flex-col'>
+                                        <div className='text-[36px]  p-2'>Your answer: {pick}</div>
+                                        <div className='text-[36px] p-2'>Correct answer: {correct}</div>
+                                </div>
+                        </div>
                     </div>
                     }
                  {x < 9 &&
-                    <div className='mt-8
-                     p-[2px] rounded-[20%] hover:scale-105 active:scale-95
+                    <div className='mt-8  w-[35%]
+                     p-[2px] rounded-[21%] hover:scale-105 active:scale-95
                     transition-all duration-500 bg-gradient-to-b from-slate-800 via-gray-900 to-blackish shadow-cool active:shadow-md'> 
-                        <button className='rounded-[21%] px-16 py-10 hover:bg-gray-300 hover:text-gray-900 font-bold text-[30px] bg-gray-700 tracking-wider font-extrabold' onClick={toggleModal}>Next Question</button>
+                        <button className='invert w-full rounded-[21%] px-16 py-10 text-[42px] bg-gradient-to-t from-blue-800  to-rose-800 tracking-wider font-extrabold' onClick={toggleModal}>Next Question</button>
                     </div>}
                 {x === 9 &&
-                <button className='mt-8
-                px-12 py-6  rounded-lg hover:scale-105 active:scale-95
-                transition-all duration-300 hover:bg-blue-500 font-bold text-[28px] bg-red-600' onClick={toggleModal}>Check Results</button>}
+                    <div className='mt-8
+                        p-[2px] rounded-[20%] hover:scale-105 active:scale-95
+                        transition-all duration-500 bg-gradient-to-b from-slate-800 via-gray-900 to-blackish shadow-cool active:shadow-md'> 
+                        <button className='invert rounded-[21%] px-16 py-10 text-[42px] bg-gradient-to-t from-blue-800  to-rose-800 tracking-wider font-extrabold' onClick={toggleModal}>Check Results</button>
+                    </div>}
                 <div className='text-center absolute bottom-16 tracking-wide text-[36px]'>"{quotes}"</div>
             </div>
             </div>}
-        {!modal && <div className='text-white font-bold flex items-center justify-center flex-col'>
-            <div className="'text-center break-all z-50 flex items-center justify-center
+        {!modal && <div className='text-white font-bold flex items-center justify-center flex-col translate-y-[15%]'>
+            <div className="'text-center break-words z-50 flex items-center justify-center
                                 hover:scale-[102%] cursor-default bg-yellow-300 transiton-all duration-300
-                                 rounded-[1%] flex-1 text-[42px] font-bold text-gray-900 border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm m-10 mb-6 py-8 px-6 max-w-1200 text-[32px]">
+                                 rounded-[1%] flex-1 text-[32px] font-bold text-gray-900 border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm m-10 mb-6 py-8 px-6 max-w-1200 ">
                 {results.question?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
             </div>
             <div className='flex'>

@@ -24,7 +24,10 @@ module.exports = {
         'idk4': 'url(https://i.pinimg.com/originals/8e/4e/51/8e4e512c33592690f2695a50ec13481c.png)',
         'idk5': 'url(https://images.pexels.com/photos/4835419/pexels-photo-4835419.jpeg?auto=compress&cs=tinysrgb&w=1600)',
         'gameover' : 'url(https://image.shutterstock.com/image-vector/neon-illustration-arcade-game-machine-260nw-1730840356.jpg)',
-        'general' : 'url(https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2019/12/23173546/Basic-General-Knowledge-for-Competitive-Exams-.jpg)'
+        'general' : 'url(https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2019/12/23173546/Basic-General-Knowledge-for-Competitive-Exams-.jpg)',
+        'dark' : 'url(https://images.pexels.com/photos/2537536/pexels-photo-2537536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+        'dark2': 'url(https://images.pexels.com/photos/1830252/pexels-photo-1830252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+        'defaultpic' : 'url(https://www.nicepng.com/png/detail/933-9332131_profile-picture-default-png.png)'
       }
     },
   },

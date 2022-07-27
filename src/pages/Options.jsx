@@ -1,49 +1,63 @@
-import React, {useEffect, useRef} from 'react'
-import { useLocation, useNavigate, Link } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 export default function Options() {
-    const location = useLocation();
-    const profile = useRef(location.state?.profile)
-    const navigate = useNavigate();
+  const location = useLocation();
+  const profile = useRef(location.state?.profile);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        console.log(profile)
-    }, [profile])
+  useEffect(() => {
+    console.log(profile);
+  }, [profile]);
 
   return (
     //fade in the user
-    <div className='text-white h-screen text-center flex  items-center'>
-        <h1 className='m-2 text-[48px] w-1/2'>Welcome, {profile.current} </h1>
-        <div className='text-white flex flex-col h-screen justify-center items-center bg-gradient-to-l from-gray-600 via-slate-400 to-stone-500 bg-center bg-cover w-1/2'>
-            <Link to = {{
-              pathname: '/genres'
-            }} className="w-1/2 m-4 active:scale-95 hover:scale-105 transition-all duration-500 relative inline-block text-lg group">
-              <span className="h-[100px] flex items-center relative z-10  px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg">
-              <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-t from-slate-600 via-purple-400 to-indigo-400 "></span>
-              <span className="w-full  relative text-[24px] font-bold tracking-wide">Start Playing</span></span>
-            </Link>
-            <Link to = {{
-              pathname: '/genres'
-            }} className="w-1/2 m-4 active:scale-95 hover:scale-105 transition-all duration-500 relative inline-block text-lg group">
-              <span className="h-[100px] flex items-center relative z-10  px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg">
-              <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-r from-slate-600 via-slate-400"></span>
-              <span className="w-full relative text-[24px] font-bold tracking-wide">View Account</span></span>
-            </Link>
-            <Link to = {{
-              pathname: '/genres'
-            }} className="w-1/2 m-4 active:scale-95 hover:scale-105 transition-all duration-500 relative inline-block text-lg group">
-              <span className="h-[100px] flex items-center relative z-10  px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg">
-              <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-b from-slate-600 via-purple-400 to-indigo-400"></span>
-              <span className="w-full relative text-[24px] font-bold tracking-wide">View Leaderboards</span></span>
-            </Link>
-            <Link to = {{
-              pathname: '/genres'
-            }} className="w-1/2 m-4 active:scale-95 hover:scale-105 transition-all duration-500 relative inline-block text-lg group">
-              <span className="h-[100px] flex items-center relative z-10  px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg">
-              <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gradient-to-l from-slate-600 via-purple-400 to-indigo-400"></span>
-              <span className="w-full relative text-[24px] font-bold tracking-wide">Logout</span></span>
-            </Link>
+    <div className="text-white h-screen text-center flex  items-center bg-gradient-to-r from-black via-slate-900 to-black ">
+      <div className="w-1/2 border-r-2 h-full flex flex-col items-center justify-center">
+        <div className='invert w-[80%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool m-8 p-4 '>
+          <h1 className="bg">Welcome {profile.current} </h1>
         </div>
+          <figure className="border-4 bg-black rounded-full flex items-center justify-center">
+            <img className="invert w-[75%] p-12" src="https://o.remove.bg/downloads/addbc713-5e02-43e9-88e8-25724147a03b/Default-Profile-Picture-PNG-High-Quality-Image-removebg-preview.png" alt="" />
+          </figure>
+          <div className="flex m-8 space-x-8">
+            <div className="p-4 border-4 font-bold">
+              Points | 1500
+            </div>
+            <button className="hover:scale-105 active:scale-100 hover:bg-white hover:text-gray-900 transition-all duration-500 p-4 border-4 font-bold">
+              Edit Profile
+            </button>
+          </div>
+      </div>
+
+      <div className="text-white flex flex-col h-screen justify-center items-center w-1/2">
+        <div className="backdrop-blur-lg backdrop-opacity-70 h-full w-full flex flex-col items-center justify-center">
+          <button
+            onClick={() => navigate("/genres")}
+            className="z-50 cursor-pointer 
+            hover:scale-105 active:scale-95  transiton-all duration-300
+           bg-orange-400 translate-x-[12%] rounded-[2%] w-2/3 text-[42px] m-6 font-extrabold text-gray-900 blur-[5%] hover:blur-none border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm"
+          >
+            Start Playing
+          </button>
+          <button
+            onClick={() => navigate("/leaderboards")}
+            className="z-50 cursor-pointer 
+            hover:scale-105 active:scale-95 m-6 transiton-all duration-300
+           bg-purple-400 -translate-x-[7%] rounded-[11%] w-2/3 text-[42px] font-extrabold text-gray-900 blur-[5%] hover:blur-none border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm"
+          >
+            View Leaderboards
+          </button>
+          <button
+            onClick={() => navigate("/")}
+            className="z-50 cursor-pointer 
+            hover:scale-105 active:scale-95 m-6 transiton-all duration-300
+           bg-yellow-300 translate-x-[5%] rounded-[25%] w-2/3 text-[42px] font-extrabold  text-gray-900 blur-[5%] hover:blur-none border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm"
+          >
+            Sign Out
+          </button>
+        </div>
+      </div>
     </div>
-  )
+  );
 }

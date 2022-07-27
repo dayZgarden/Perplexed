@@ -19,21 +19,17 @@ export default function Genres() {
 
 
   return (
-    <div className='h-full bg-blackish'>
-        <div className='h-full'>
-            <h1 className='text-white text-center pt-12 text-[52px] font-bold, tracking-wide uppercase'>Choose any Genre</h1>
-            <div className='h-4/5 m-6 flex justify-center items-center flex-wrap'>
+    <div className='h-screen w-full bg-dark bg-center bg-cover'>
+        <div className='h-full backdrop-blur-lg'>
+            <h1 className=' w-[80%] text-center tracking-wider bg-transparent text-white brightness-0  font-extrabold text-[58px] border-4 border-gray-900 shadow-cool uppercase p-4
+            mx-auto translate-y-[15%] mb-8'>Choose any Genre</h1>
+            <div className='h-4/5 flex justify-center items-center flex-wrap'>
             {Object.entries(requests).map(([key, {title, url}]) => (
                 // <button key={key} onClick={()=>handleClick(url, title)}
-                <div key={key} onClick={()=>handleClick(url, title)} className='cursor-pointer 
-                hover:scale-105 active:scale-95 transiton-all duration-500
-               bg-white rounded-[50%] w-1/4 h-[460px] tracking-wide 
-               blur-[5%] bg-general bg-center bg-cover
-               hover:blur-none m-6 overflow-hidden shadow-cool active:shadow-sm group '>
-                <div className=' h-full w-full text-[56px] font-extrabold flex items-center 
-                group-hover:opacity-100 text-gray-900 group-hover:backdrop-blur-lg opacity-[15%] justify-center text-center transition-all duration-300'>
-                    {title}
-                </div> 
+            <div className='max-w-[180px] h-[180px] w-full bg-general bg-center bg-cover m-2 
+                shadow-cool active:shadow-sm group hover:scale-105 rounded-[7%] active:scale-95 transiton-all duration-500'>
+                <div key={key} onClick={()=>handleClick(url, title)} className='cursor-pointer tracking-wide w-full h-full'></div>
+                <h1 className=' font-extrabold text-center mt-1 text-[16px] opacity-0 group-hover:opacity-100 border-4 bg-white text-gray-900 border-gray-900  p-[6px]'>{title}</h1>
             </div>
             ))}
             </div>

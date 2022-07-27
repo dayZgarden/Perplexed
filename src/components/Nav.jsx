@@ -5,10 +5,10 @@ export default function Nav() {
     <div className='bg-transparent h-[50px] w-full relative'>
         <div className='w-[95%]' >
             <div className='flex items-center w-full justify-between'>
-                <div className='flex ml-2 space-x-1 items-center'>
-                    <img className='ml-4 invert contain w-16 h-16' src="https://day-ztracker.vercel.app/assets/icons8-flat-60.png" alt="" />
-                    <h1 className='text-white py-6 px-4 m-4 font-extrabold tracking-wide
-                    text-[42px]'>
+                <div className='flex ml-6 space-x-1 items-center'>
+                    <img className='ml-4 invert contain w-20 h-20' src="https://day-ztracker.vercel.app/assets/icons8-flat-60.png" alt="" />
+                    <h1 className='text-white py-6 px-4 m-4  font-extrabold tracking-wide
+                    text-[48px]'>
                         dayZtrivia
                     </h1>
                 </div>

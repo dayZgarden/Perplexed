@@ -13,6 +13,7 @@ import Nav from '../components/Nav';
 import olday from '../../public/oldday.svg'
 import gameday from '../../public/gameday.svg'
 import test from '../../public/test.svg'
+import { ArrowLeftIcon } from '@heroicons/react/solid';
 
 
 export default function Register() {
@@ -121,21 +122,20 @@ export default function Register() {
       
 
   return ( 
-    <div className='h-screen bg-gradient-to-r w-full from-black via-slate-900 to-black'>
-        <Nav />
+    <div className='h-screen bg-gradient-to-b w-full from-black via-slate-800 to-indigo-900'>
+        {!loading && <Nav onClick={() => setExist(true)}/>}
         <div className='h-full '>
         {!loading && 
-        <div className='h-full w-full  max-w-[1200px] mx-auto'>
-            <div className='h-full text-white flex items-center'>
-                <div className='w-[49%] flex flex-col'>
+        <div className='h-full w-full  max-w-[1280px] mx-auto'>
+             {(!create && !exist) && <div className='h-full text-white flex items-center justify-between'>
+           <div className='w-[48%] flex flex-col'>
                     <h2 className='text-center break-words z-50 flex items-center justify-center
                                  cursor-default bg-yellow-300 border-[7px]
                                  rounded-[9%] uppercase font-extrabold
-                                 text-[44px] text-gray-900 p-12 border-gray-900 overflow-hidden m-4 mb-2 py-8 px-6'>Show off what you know</h2>
+                                 text-[44px] text-gray-900 p-12 border-gray-900 overflow-hidden m-4 mb-2 py-8 px-6'>Show off your knowledge</h2>
                     <h1 className='font-bold text-center break-words z-50
                                 -translate-x-[15%] cursor-default bg-orange-400 transiton-all duration-300
-                                 rounded-[4%] font-bold
-                                 text-[24px] text-gray-900 border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm m-4 py-8 px-6'><span className='font-extrabold'>Start competing 
+                                 rounded-[4%] text-[24px] text-gray-900 border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm m-4 py-8 px-6'><span className='font-extrabold'>Start competing 
                     </span> with the <span className='font-extrabold'>award winning </span> 
                     trivia platform <span className='font-extrabold'>dayZtrivia</span></h1>
                     <button onClick={() => setCreate(true)} className='font-bold text-center break-words z-50
@@ -146,29 +146,34 @@ export default function Register() {
                     </button>
 
                 </div>
-                <figure className='w-[49%] flex items-center justify-center ml-4'>
+                <figure className='w-[48%] flex items-center justify-center'>
                     <img className='w-full backdrop-opacity-0' src={olday} alt="" />
                 </figure>
-            </div>
+            </div>}
 
         {(create || exist) && 
-             <div className='flex flex-col items-center justify-center  h-4/5'>
+             <div className='relative flex flex-col items-center justify-center bg-gray-100 shadow-cool border-2 border-gray-900 rounded-[12%] h-[70%] translate-y-[20%]'>
                     <form action="" className='flex flex-col items-center justify-center'>
-                        <div className='border-2 p-4 rounded-lg border-white m-2'>
-                            <input onChange={(e) => setName(e.target.value)} className='text-white focus:outline-none placeholder:text-white bg-transparent' type="text" placeholder='Jane' />
+                        <div className='w-[80%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 '>
+                            <input onChange={(e) => setName(e.target.value)} className='text-white brightness-200 focus:outline-none placeholder:text-white bg-transparent' type="text" placeholder='Jane' />
                         </div>
-                        <div className='border-2 p-4 rounded-lg border-white m-2'>
+                        <div className='w-[80%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 '>
                             <input onChange={(e) => setEmail(e.target.value)} className='text-white focus:outline-none placeholder:text-white bg-transparent' type="email" placeholder='janedoe@email.com' />
                         </div>
-                        <div className='border-2 p-4 rounded-lg border-white m-2'>
+                        <div className='w-[80%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 '>
                             <input onChange={(e) => setPassword(e.target.value)} className='text-white focus:outline-none bg-transparent placeholder:text-white ' type="password" placeholder='password'/>
                         </div>
                     </form>
-                    <button onClick={back} className='cursor-pointer w-[200px] text-center text-white 9-8'>Back</button>
-                    {user?.email?.length > 0 && 
-                    <button className='text-white p-4 bg-blue-500' onClick={logout}>
-                    Logout
-                    </button>}
+                        <button onClick={back} className='hover:scale-[105%] active:scale-100 
+                        transition-all duration-300 cursor-pointer absolute top-12 left-12 w-16 h-16 text-center text-black 9-8'><ArrowLeftIcon/></button>
+                    <div className='flex items-center w-full justify-center'>
+                        {user?.email?.length > 0 && 
+                        <button className='font-bold text-center break-words z-50
+                        hover:scale-[103%] cursor-pointer bg-purple-400 transiton-all duration-300
+                        w-[40%] rounded-[11%] text-[28px] text-gray-900 border-2 py-6 px-4 border-gray-900 overflow-hidden shadow-cool active:shadow-lg m-4' onClick={logout}>
+                            Create Account
+                        </button>}
+                    </div>
                  </div>
         } 
         {/* {(!create && !exist) &&
@@ -183,10 +188,14 @@ export default function Register() {
         </div>} */}
 
         </div>}
-        {loading && <div className='relative h-44 w-44 animate-spin  rounded-full bg-gradient-to-r from-pink-600 via-indigo-600 to bg-green-600'>
-            <div className='absolute top-1/2 left-1/2 rounded-full -translate-x-1/2 -translate-y-1/2 transform w-40 h-40 bg-blackish'>
+        {loading && 
+        <div className='h-full w-full relative flex items-center justify-center'>
+        <div className='relative  h-44 w-44 animate-spin  rounded-full bg-gradient-to-r from-pink-600 via-indigo-600 to bg-green-600'>
+            <div className='absolute top-[50%] left-[50%] rounded-full -translate-x-1/2 -translate-y-1/2 transform w-40 h-40 bg-slate-900'>
             </div>
-        </div>}
+        </div>
+        </div>
+        }
         </div>
     </div>
   )
