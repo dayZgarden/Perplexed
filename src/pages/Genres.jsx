@@ -26,7 +26,7 @@ export default function Genres() {
             <div className='h-4/5 flex justify-center items-center flex-wrap'>
             {Object.entries(requests).map(([key, {title, url}]) => (
                 // <button key={key} onClick={()=>handleClick(url, title)}
-            <div className='max-w-[180px] h-[180px] w-full bg-general bg-center bg-cover m-2 
+            <div className='max-w-[150px] h-[150px] w-full bg-general bg-center bg-cover m-2 
                 shadow-cool active:shadow-sm group hover:scale-105 rounded-[7%] active:scale-95 transiton-all duration-500'>
                 <div key={key} onClick={()=>handleClick(url, title)} className='cursor-pointer tracking-wide w-full h-full'></div>
                 <h1 className=' font-extrabold text-center mt-1 text-[16px] opacity-0 group-hover:opacity-100 border-4 bg-white text-gray-900 border-gray-900  p-[6px]'>{title}</h1>

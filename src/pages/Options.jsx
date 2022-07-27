@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
+import goku from '../../public/goku.png'
 
 export default function Options() {
   const location = useLocation();
@@ -17,10 +18,10 @@ export default function Options() {
         <div className='invert w-[80%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool m-8 p-4 '>
           <h1 className="bg">Welcome {profile.current} </h1>
         </div>
-          <figure className="border-4 bg-black rounded-full flex items-center justify-center">
-            <img className="invert w-[75%] p-12" src="https://o.remove.bg/downloads/addbc713-5e02-43e9-88e8-25724147a03b/Default-Profile-Picture-PNG-High-Quality-Image-removebg-preview.png" alt="" />
+          <figure className="border-4 w-[50%] h-[55%] bg-black rounded-full flex items-center justify-center">
+            <img className="invert w-[90%] h-[90%] p-12" src={goku} alt="" />
           </figure>
-          <div className="flex m-8 space-x-8">
+          <div className="flex m-8 mb-16 space-x-8">
             <div className="p-4 border-4 font-bold">
               Points | 1500
             </div>

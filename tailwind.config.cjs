@@ -1,4 +1,18 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require('tailwindcss/plugin')
+
+const myClass = plugin(function ({ addUtilities }){
+  addUtilities({
+    '.my-rotate-y-180':{
+      transform: "rotateY(180deg)"
+    },
+    '.preserve-3d':{
+      transformStyle: 'preserve-3d',
+    }
+  })
+})
+
 module.exports = {
   content: [
     "./index.html",
@@ -32,6 +46,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('tailwind-scrollbar-hide')
+    require('tailwind-scrollbar-hide'),
+    myClass
   ],
 }
