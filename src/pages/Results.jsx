@@ -1,9 +1,10 @@
 import {EyeIcon,  MapIcon,  MoonIcon,  PencilIcon,  PuzzleIcon,  ScaleIcon,  UserIcon,  XCircleIcon,  } from '@heroicons/react/solid';
 import { UsersIcon } from '@heroicons/react/solid';
 import { sendSignInLinkToEmail } from 'firebase/auth';
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { useLocation, Link, useNavigate } from 'react-router-dom'
 import Question from '../components/Question';
+
 
 export default function Results() {
 
@@ -38,8 +39,8 @@ export default function Results() {
         {!eye &&
         <div className='text-white backdrop-blur-xl h-full p-4 backdrop-opacity-70'>
           <div className='flex justify-center items-center h-full p-4 max-w-[1200px] w-full mx-auto'>
-            <div className='flex-col tracking-wide font-bold rounded-[50%] bg-purple-300 text-gray-900 max-w-[50%] w-[100%] p-16 flex items-center
-            justify-center  h-[65%] mt-20 border-4 border-gray-900 text-[86px] mr-16'>
+            <div className='flex-col tracking-wide font-bold rounded-[50%] bg-purple-300 text-gray-900 max-w-[40%] 2xl:max-w-[50%] w-[100%] p-16 flex items-center
+            justify-center  h-[70%] mt-20 border-4 border-gray-900 text-[86px] mr-16'>
               <div>
                 {score}
               </div>

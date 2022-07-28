@@ -1,0 +1,1 @@
+const startingTime = 10;

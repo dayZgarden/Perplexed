@@ -28,6 +28,18 @@ export default function Landing() {
     const[loading, setLoading] = useState(true);
     const[exit, setExit] = useState(false)
     const [temp, setTemp] = useState([])
+    const [seconds, setSeconds] = useState(0);
+
+    var timer;
+
+    useEffect(() => {
+        timer = setInterval(() => {
+            setSeconds(seconds + 1)
+        },1000)
+
+    return () => clearInterval(timer);
+    })
+
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -117,9 +129,10 @@ export default function Landing() {
             }
         }
     },[y])
+
  
   return (
-    <div className='h-[103vh] bg-idk2 bg-cover bg-center scrollbar-hide'>
+    <div className='xl:h-[103vh] lg:h-[200vh] bg-idk2 bg-cover bg-center scrollbar-hide'>
         {exit &&
         <div className='relative z-50 h-full scrollbar-locked flex items-center justify-center flex-col bg-gradient-to-r w-full from-black via-slate-900 to-black text-white'>
             <h1 className='absolute top-5 text-[24px] animate-pulse left-[50%] -translate-x-[50%]'>{title} | Difficulty: Easy</h1>
@@ -133,51 +146,57 @@ export default function Landing() {
         </div>}
 
         {!exit && !loading && <div className='scrollbar-hide backdrop-blur-xl backdrop-brightness-95 backdrop-opacity-70 h-full'>
+        <div id='timer' className='fixed top-3 left-3 text-white text-[64px] font-extrabold
+        px-4 py-2 rounded-full'>{seconds}</div>
         {!modal && <div className='break-all 
                                 cursor-default bg-orange-400 transiton-all duration-300
                                  rounded-[1%] flex-1 text-[42px] font-bold text-gray-900 border-2 flex items-center justify-center
                                   border-gray-900 overflow-hidden 
-                                shadow-cool active:shadow-sm max-w-[1000px] mx-auto h-[140px] tracking-wide text-center p-4'>{title} | {x+1} of 10 | Points: {points}</div>}
+                                shadow-cool active:shadow-sm max-w-[1000px] mx-auto h-[15%] tracking-wide text-center'>{title} | {x+1} of 10 | Points: {points}</div>}
         {!modal && <button onClick={()=> setExit(!exit)} className='fixed cursor-pointer hover:scale-105 active:scale-90 hover:bg-purple-400  top-6 right-6 w-12 h-12 text-gray-900
         transition-all duration-300 bg-yellow-300 border-gray-900 border-4'><XIcon/></button>}
 
-        {(modal) && <div className='h-[103vh] bg-dark2 bg-center bg-fill flex justify-center items-center
+        {(modal) && <div className='h-[103vh] overflow-hide bg-dark2 bg-center bg-fill flex items-center
         text-white flex-col '>
-            <div className='h-full backdrop-blur-lg backdrop-opacity-90 w-full flex flex-col items-center justify-center'>
-                    {(pick === correct) ? 
+            <div className='h-full p-8 backdrop-blur-lg backdrop-opacity-90 w-full justify-center flex flex-col items-center'>
+                    {(pick === correct) && 
                     <div className='w-[60%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[48px] border-4 border-gray-900 shadow-cool mb-8 p-4 '>
                         Correct Answer
-                    </div>
-                    : 
-                    <div className=' w-full flex flex-col items-center'>
-                        <div className='text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 w-[60%]'>Incorrect Answer</div>
-                        <div className=' p-6 m-6  border-2 border-gray-900  shadow-cool rounded-[7%] flex bg-gray-50 brightness-90 text-gray-900 max-w-[850px] mx-auto'>
+                    </div>}
+                    
+                    <div className=' w-full  flex flex-col items-center'>
+                        {!(pick===correct) && <div className='text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 w-[60%]'>Incorrect Answer</div>}
+                        <div className='flex mt-10 space-x-4 2xl:m-0 justify-center items-center 2xl:flex-col'>
+
+                        {!(pick===correct) && 
+                        <div className=' p-6  border-2 border-gray-900  shadow-cool rounded-[7%] flex bg-gray-50 brightness-90 text-gray-900 max-w-[850px] mx-auto'>
                                  <div className=' h-full tracking-wider font-extrabold w-full bg-transparent rounded-[10%] p-4 flex-col'>
-                                        <div className='text-[36px]  p-2'>Your answer: {pick}</div>
-                                        <div className='text-[36px] p-2'>Correct answer: {correct}</div>
+                                        <div className='text-[28px] 2xl:text-[36px]  p-2'>Your answer: {pick}</div>
+                                        <div className='text-[28px] 2xl:text-[36px] p-2'>Correct answer: {correct}</div>
                                 </div>
+                        </div>}
+                        {x < 9 &&
+                           <div className='2xl:mt-8 w-[45%] 2xl:w-[80%]
+                            p-[2px] rounded-[21%] hover:scale-105 active:scale-95
+                           transition-all duration-500 bg-gradient-to-b from-slate-800 via-gray-900 to-blackish shadow-cool active:shadow-md'> 
+                               <button className='invert w-full rounded-[21%] px-16 py-10 text-[42px] bg-gradient-to-t from-blue-800  to-rose-800 tracking-wider font-extrabold' onClick={toggleModal}>Next Question</button>
+                           </div>}
+                       {x === 9 &&
+                           <div className='2xl:mt-8 w-[45%] 2xl:w-[80%]
+                               p-[2px] rounded-[20%] hover:scale-105 active:scale-95
+                               transition-all duration-500 bg-gradient-to-b from-slate-800 via-gray-900 to-blackish shadow-cool active:shadow-md'> 
+                               <button className='invert rounded-[21%] px-16 py-10 text-[42px] bg-gradient-to-t from-blue-800  to-rose-800 tracking-wider font-extrabold' onClick={toggleModal}>Check Results</button>
+                           </div>}
                         </div>
                     </div>
-                    }
-                 {x < 9 &&
-                    <div className='mt-8  w-[35%]
-                     p-[2px] rounded-[21%] hover:scale-105 active:scale-95
-                    transition-all duration-500 bg-gradient-to-b from-slate-800 via-gray-900 to-blackish shadow-cool active:shadow-md'> 
-                        <button className='invert w-full rounded-[21%] px-16 py-10 text-[42px] bg-gradient-to-t from-blue-800  to-rose-800 tracking-wider font-extrabold' onClick={toggleModal}>Next Question</button>
-                    </div>}
-                {x === 9 &&
-                    <div className='mt-8
-                        p-[2px] rounded-[20%] hover:scale-105 active:scale-95
-                        transition-all duration-500 bg-gradient-to-b from-slate-800 via-gray-900 to-blackish shadow-cool active:shadow-md'> 
-                        <button className='invert rounded-[21%] px-16 py-10 text-[42px] bg-gradient-to-t from-blue-800  to-rose-800 tracking-wider font-extrabold' onClick={toggleModal}>Check Results</button>
-                    </div>}
-                <div className='text-center absolute bottom-16 tracking-wide text-[36px]'>"{quotes}"</div>
+                    
+                <div className='text-center p-2 mt-8 tracking-wide text-[28px] xl:text-[36px]'>"{quotes}"</div>
             </div>
             </div>}
         {!modal && <div className='text-white font-bold flex items-center justify-center flex-col translate-y-[15%]'>
             <div className="'text-center break-words z-50 flex items-center justify-center
                                 hover:scale-[102%] cursor-default bg-yellow-300 transiton-all duration-300
-                                 rounded-[1%] flex-1 text-[32px] font-bold text-gray-900 border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm m-10 mb-6 py-8 px-6 max-w-1200 ">
+                                 rounded-[1%] flex-1 text-[32px] font-bold text-gray-900 border-2 border-gray-900 overflow-hidden shadow-cool active:shadow-sm m-2 p-5 max-w-1200 ">
                 {results?.question?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
             </div>
             <div className='flex'>

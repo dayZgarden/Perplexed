@@ -64,12 +64,7 @@ export default function Register() {
             setLoading(true)
             console.log(user)
                 setTimeout(() => {
-                    navigate('/options', 
-                {
-                    state:{
-                        profile: user?.displayName
-                    }
-                  })
+                    navigate('/options')
                 }, 2000)
         }
     }, [exist, user, create])
@@ -139,19 +134,19 @@ export default function Register() {
         {!loading && 
         <div className='h-full w-full  max-w-[1280px] mx-auto'>
              {(!create && !exist) && <div className='h-full text-white flex items-center justify-between'>
-           <div className='w-[48%] flex flex-col'>
+           <div className='group  w-[48%] flex flex-col'>
                     <h2 className='text-center break-words z-50 flex items-center justify-center
                                  cursor-default bg-yellow-300 border-[7px]
                                  rounded-[9%] uppercase font-extrabold
                                  text-[44px] text-gray-900 p-12 border-gray-900 overflow-hidden m-4 mb-2 py-8 px-6'>Show off your knowledge</h2>
                     <h1 className='font-bold text-center break-words z-50
                                 -translate-x-[15%] cursor-default bg-orange-400 transiton-all duration-300
-                                 rounded-[4%] text-[24px] text-gray-900 border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm m-4 py-8 px-6'><span className='font-extrabold'>Start competing 
+                                -left-[50px] delay-[.35s] duration-[1s] group-hover:left-3 scale-0 group-hover:scale-100 rounded-[4%] text-[24px] text-gray-900 border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm m-4 py-8 px-6'><span className='font-extrabold'>Start competing 
                     </span> with the <span className='font-extrabold'>award winning </span> 
                     trivia platform <span className='font-extrabold'>dayZtrivia</span></h1>
                     <button onClick={() => setCreate(true)} className='font-bold text-center break-words z-50
                                 hover:scale-[103%] cursor-pointer bg-purple-400 transiton-all duration-300
-                                 w-5/6 mx-auto rounded-[11%] text-[28px] text-gray-900 border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-lg m-4 py-8 px-6'
+                                -bottom-20 delay-500 duration-1000 group-hover:bottom-3 scale-0 group-hover:scale-100 w-5/6 mx-auto rounded-[11%] text-[28px] text-gray-900 border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-lg m-4 py-8 px-6'
                                  >
                                     Create An Account
                     </button>

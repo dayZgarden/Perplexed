@@ -1,17 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useNavigate,  } from "react-router-dom";
 import goku from '../../public/goku.png'
 import  auth  from '../firebase/fire'
 import logout from "../utils/logout";
 
 export default function Options() {
-  const location = useLocation();
-  const profile = useRef(location.state?.profile);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    console.log(profile);
-  }, [profile]);
+  console.log(auth.currentUser);
 
   function handleLogout(){
     logout(auth)
@@ -27,7 +22,7 @@ export default function Options() {
     <div className="text-white h-screen text-center flex  items-center bg-gradient-to-r from-black via-slate-900 to-black ">
       <div className="w-1/2 border-r-2 h-full flex flex-col items-center justify-center">
         <div className='invert w-[80%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool m-8 p-4 '>
-          <h1 className="bg">Welcome {profile.current} </h1>
+          <h1 className="bg">Welcome {auth?.currentUser?.displayName} </h1>
         </div>
           <figure className="border-4 w-[50%] h-[55%] bg-black rounded-full flex items-center justify-center">
             <img className="invert w-[90%] h-[90%] p-12" src={goku} alt="" />
