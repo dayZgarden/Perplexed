@@ -11,9 +11,9 @@ export default function Results() {
     const navigate = useNavigate();
     const points = parseInt(location.state.uPoints);
     const score = parseInt(location.state.uScore);
-    const questions = (location.state.all).split('?').splice(1,10)
-    const choices = (location.state.choices).replaceAll(';',',').split(',').splice(3,11)
-    const rights = (location.state.rights).split(',').splice(3,11)
+    const questions = (location.state.all)?.split('?').splice(1,10)
+    const choices = (location.state.choices)?.replaceAll(';',',').split(',').splice(3,11)
+    const rights = (location.state.rights)?.split(',').splice(3,11)
     console.log(rights)
     console.log(choices)
     console.log(questions)
@@ -38,7 +38,7 @@ export default function Results() {
         {!eye &&
         <div className='text-white backdrop-blur-xl h-full p-4 backdrop-opacity-70'>
           <div className='flex justify-center items-center h-full p-4 max-w-[1200px] w-full mx-auto'>
-            <div className='flex-col tracking-wide font-bold rounded-[50%] bg-purple-300 text-gray-900 w-[50%] p-16 flex items-center
+            <div className='flex-col tracking-wide font-bold rounded-[50%] bg-purple-300 text-gray-900 max-w-[50%] w-[100%] p-16 flex items-center
             justify-center  h-[65%] mt-20 border-4 border-gray-900 text-[86px] mr-16'>
               <div>
                 {score}

@@ -1,6 +1,7 @@
 import React from 'react'
 import fire from '../firebase/fire'
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react' 
+import  auth  from '../firebase/fire'
 import { getAuth, 
     createUserWithEmailAndPassword, 
     signInWithEmailAndPassword,
@@ -8,23 +9,27 @@ import { getAuth,
     onAuthStateChanged,
     updateProfile, 
     sendEmailVerification } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Nav from '../components/Nav';
 import olday from '../../public/oldday.svg'
 import gameday from '../../public/gameday.svg'
 import test from '../../public/test.svg'
 import { ArrowLeftIcon } from '@heroicons/react/solid';
+import logout from '../utils/logout';
 
 
 export default function Register() {
     const navigate = useNavigate()
+    const location = useLocation();
+    let check = false;
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             setLoading(false)
             console.log(user)
+            console.log(auth)
             setUser(user)
-            console.log(exist)
+            console.log(user?.uid)
         })
     },[])
 
@@ -36,11 +41,6 @@ export default function Register() {
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
     const [name, setName] = useState('')
-    const [profile, setProfile] = useState()
-
-
-
-    const auth = getAuth();
 
     async function newUser(){
         try {
@@ -91,12 +91,6 @@ export default function Register() {
         setReady(true)
     }
 
-    function logout(){
-        signOut(auth);
-        setUser({})
-        setReady(false)
-    }
-
     function back () {
         setExist(false);
         setCreate(false)
@@ -119,11 +113,28 @@ export default function Register() {
           document.removeEventListener("keydown", listener);
         };
       }, );
-      
 
   return ( 
     <div className='h-screen bg-gradient-to-b w-full from-black via-slate-800 to-indigo-900'>
-        {!loading && <Nav onClick={() => setExist(true)}/>}
+        {!loading && <div className='bg-transparent h-[50px] w-full relative'>
+            <div className='w-[95%]' >
+                <div className='flex items-center w-full justify-between'>
+                    <div className='flex ml-6 space-x-1 items-center'>
+                        <img className='ml-4 invert contain w-20 h-20' src="https://day-ztracker.vercel.app/assets/icons8-flat-60.png" alt="" />
+                        <h1 className='text-white py-6 px-4 m-4  font-extrabold tracking-wide
+                        text-[48px]'>
+                            dayZtrivia
+                        </h1>
+                    </div>
+                    <button onClick={() => setExist(true)} className='font-bold text-center break-words z-50
+                        hover:scale-[103%] cursor-pointer bg-purple-400 transiton-all duration-300
+                        w-[240px] rounded-[31%] text-[28px] text-gray-900 border-2 py-6 px-4 border-gray-900 overflow-hidden shadow-cool active:shadow-lg m-4'
+                        >
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </div>}
         <div className='h-full '>
         {!loading && 
         <div className='h-full w-full  max-w-[1280px] mx-auto'>
@@ -154,14 +165,14 @@ export default function Register() {
         {(create || exist) && 
              <div className='relative flex flex-col items-center justify-center bg-gray-100 shadow-cool border-2 border-gray-900 rounded-[12%] h-[70%] translate-y-[20%]'>
                     <form action="" className='flex flex-col items-center justify-center'>
-                        <div className='w-[80%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 '>
-                            <input onChange={(e) => setName(e.target.value)} className='text-white brightness-200 focus:outline-none placeholder:text-white bg-transparent' type="text" placeholder='Jane' />
+                        {!exist && <div className='w-[80%] overflow-hidden text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 '>
+                            <input onChange={(e) => setName(e.target.value)} className='text-white outline-none brightness-200 focus:outline-[0%] placeholder:text-white placeholder:opacity-[15%]  bg-transparent' type="text" placeholder='Create a username' />
+                        </div>}
+                        <div className='w-[80%] text-center overflow-hidden tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 '>
+                            <input onChange={(e) => setEmail(e.target.value)} className='text-white focus:outline-none placeholder:text-white placeholder:opacity-[15%]  bg-transparent' type="email" placeholder='Email' />
                         </div>
-                        <div className='w-[80%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 '>
-                            <input onChange={(e) => setEmail(e.target.value)} className='text-white focus:outline-none placeholder:text-white bg-transparent' type="email" placeholder='janedoe@email.com' />
-                        </div>
-                        <div className='w-[80%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 '>
-                            <input onChange={(e) => setPassword(e.target.value)} className='text-white focus:outline-none bg-transparent placeholder:text-white ' type="password" placeholder='password'/>
+                        <div className='w-[80%] text-center overflow-hidden tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool mb-8 p-4 '>
+                            <input onChange={(e) => setPassword(e.target.value)} className='text-white focus:outline-none bg-transparent placeholder:text-white placeholder:opacity-[15%] ' type="password" placeholder='Password'/>
                         </div>
                     </form>
                         <button onClick={back} className='hover:scale-[105%] active:scale-100 

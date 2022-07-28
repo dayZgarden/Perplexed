@@ -4,14 +4,16 @@ import { useEffect, useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import { XIcon } from '@heroicons/react/solid'
+import getQuestions from '../utils/getQuestions'
+import getQuotes from '../utils/getQuotes'
+import Card from '../components/Card'
+import { randomizeArray } from '../utils/randomizeArray'
  
 export default function Landing() {
  
     const [results, setResults] = useState([])
     const [correct, setCorrect] = useState('')
     const [incorrect, setIncorrect] = useState([])
-    const [choice, setChoice] = useState(false)
-    const [wrongChoice, setWrongChoice] = useState(false);
     const [modal, setModal] = useState(false)
     const [x, setX] = useState(0)
     const [y, setY] = useState(0)
@@ -25,49 +27,41 @@ export default function Landing() {
     const[everyCorrect, setEveryCorrect] = useState('');
     const[loading, setLoading] = useState(true);
     const[exit, setExit] = useState(false)
-    const [q, setQ] = useState('')
+    const [temp, setTemp] = useState([])
 
     const navigate = useNavigate();
     const location = useLocation();
     const query = location.state.query;
     const title = location.state.title
- 
-    async function getQuestions() {
-        const { data } = await axios.get(`https://opentdb.com/api.php?amount=10${query}`)
-        setResults(data.results[x]);
-    }
+    console.log(query)
 
     useEffect(() => {
-        setEntireList(entireList + (results.question))
+        setEntireList(entireList + (results?.question))
         setEveryChoice((everyChoice + (pick + ', ')))
         setEveryCorrect((everyCorrect + (correct + ', ')))
     }, [results])
 
     useEffect(() => {
-        setTimeout(() => {
+        getQuestions(query).then(res => {
+            console.log(res)
+            setTemp(res)
+            setResults(res[0])
+        })
+        setTimeout(() =>{
             setLoading(false)
-        }, 1000)
-    },[])
-
-    async function getQuotes() {
-        const { data } = await axios.get('https://api.adviceslip.com/advice')
-        setQuotes(data.slip.advice)
-    }
+        }, 2250)
+    },[query])
  
     useEffect(() => {
-        // setQ(query.toString().replace('medium', 'easy'))
-        getQuestions();
-    },[])
-
- 
-    useEffect(() => {
-        getQuestions();
-        getQuotes();
+        setResults(temp[x])
+        getQuotes().then(res => {
+            setQuotes(res)
+        })
     },[x])
  
     useEffect(() => {
         let arr = [];
-        setCorrect(results.correct_answer)
+        setCorrect(results?.correct_answer)
         for(let i = 0; i < results?.incorrect_answers?.length; i++){
             arr[i] = results.incorrect_answers[i];
         }
@@ -77,15 +71,7 @@ export default function Landing() {
     useEffect(() => {
         let arr = []
         arr[0] = correct
-        for(let i = 1; i < 4; i++){
-            arr[i] = incorrect[i-1];
-        }
-        for (let i = arr.length - 1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i + 1));
-            let temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
+        arr = randomizeArray(arr, incorrect)
         setCards(arr)
     }, [correct, incorrect])
 
@@ -117,13 +103,11 @@ export default function Landing() {
 
     useEffect(() => {
         if(pick === correct){
-            setChoice(true)
             setModal(true)
             setPoints(points + 1000)
             setScore(score + 1)
         }
         else if(y>=1){
-            setWrongChoice(true)
             setModal(true)
             if(points <= 500){
                 setPoints(0)
@@ -137,7 +121,7 @@ export default function Landing() {
   return (
     <div className='h-[103vh] bg-idk2 bg-cover bg-center scrollbar-hide'>
         {exit &&
-        <div className='relative z-50 h-screen scrollbar-locked flex items-center justify-center flex-col bg-gradient-to-r w-full from-black via-slate-900 to-black text-white'>
+        <div className='relative z-50 h-full scrollbar-locked flex items-center justify-center flex-col bg-gradient-to-r w-full from-black via-slate-900 to-black text-white'>
             <h1 className='absolute top-5 text-[24px] animate-pulse left-[50%] -translate-x-[50%]'>{title} | Difficulty: Easy</h1>
             <h1 className='font-bold cursor-default p-6 text-[72px] text-center border-4 rounded-[3%] border-blue-400 flex bg-gray-900 text-white max-w-[1000px] mx-auto' >Are you sure you want to exit now?</h1>
             <div className='flex w-1/2 justify-evenly translate-y-[10%]'>
@@ -148,8 +132,8 @@ export default function Landing() {
             </div>
         </div>}
 
-        {!loading && <div className='scrollbar-hide backdrop-blur-xl backdrop-brightness-95 backdrop-opacity-70 h-full'>
-        {!modal && <div className='break-all z-50 
+        {!exit && !loading && <div className='scrollbar-hide backdrop-blur-xl backdrop-brightness-95 backdrop-opacity-70 h-full'>
+        {!modal && <div className='break-all 
                                 cursor-default bg-orange-400 transiton-all duration-300
                                  rounded-[1%] flex-1 text-[42px] font-bold text-gray-900 border-2 flex items-center justify-center
                                   border-gray-900 overflow-hidden 
@@ -194,20 +178,12 @@ export default function Landing() {
             <div className="'text-center break-words z-50 flex items-center justify-center
                                 hover:scale-[102%] cursor-default bg-yellow-300 transiton-all duration-300
                                  rounded-[1%] flex-1 text-[32px] font-bold text-gray-900 border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm m-10 mb-6 py-8 px-6 max-w-1200 ">
-                {results.question?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
+                {results?.question?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
             </div>
             <div className='flex'>
                 <div className="flex p-4 flex-wrap justify-center">
                     { cards?.map((option)=> (
-                        <div className='w-1/3 max-w-[700px] active:animate-ping-once relative m-4 flex flex-col  justify-center items-center'>
-                            <div className='
-                             relative w-full flex items-center flex-wrap active:scale-95 hover:scale-105 transition-all duration-300 rounded-[20%] leading-none'>
-                                <input type="button" className='break-words z-50 odd:bg-purple-300 cursor-pointer 
-                                hover:scale-[103%] m-2 hover:bg-orange-400 active:scale-100  transiton-all duration-300
-                                 rounded-[11%] flex-1 text-[42px] font-bold w-1/2 text-gray-900 border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm' 
-                                 value={option} onClick={picked} placeholder={option?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}/>
-                            </div>
-                        </div>
+                        <Card option={option} picked={picked}/>
                     ))}
                 </div>
             </div>

@@ -22,7 +22,7 @@ export default function Question({question, choice, right}) {
 
     console.log(question)
   return (
-    <div className='bg-gradient-to-r w-full from-black via-slate-900 h-full'>
+    <div className='bg-gradient-to-r w-full from-black via-slate-800 h-full'>
 
         <div className='backdrop-blur-xl backdrop-opacity-70'>
             {
@@ -35,13 +35,13 @@ export default function Question({question, choice, right}) {
                         </div>
                         <div className='flex flex-col'>
                             <div className='text-[32px] z-50'>
-                                {e[1].question.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}?
+                                {e[1].question?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}?
                             </div>
                             <div className='my-1 text-[24px]'>
-                                You Chose: {e[1].choice.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
+                                You Chose: {e[1].choice?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
                             </div>
                             <div className='text-[24px]'>
-                                 Correct Answer: {e[1].answer.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
+                                 Correct Answer: {e[1].answer?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
                             </div>
                         </div>
                         {(e[1].choice === e[1].answer) 

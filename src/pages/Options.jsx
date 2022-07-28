@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import goku from '../../public/goku.png'
+import  auth  from '../firebase/fire'
+import logout from "../utils/logout";
 
 export default function Options() {
   const location = useLocation();
@@ -10,6 +12,15 @@ export default function Options() {
   useEffect(() => {
     console.log(profile);
   }, [profile]);
+
+  function handleLogout(){
+    logout(auth)
+      navigate('/', {
+        state: {
+          check: true
+        }
+      })
+}
 
   return (
     //fade in the user
@@ -50,7 +61,7 @@ export default function Options() {
             View Leaderboards
           </button>
           <button
-            onClick={() => navigate("/")}
+            onClick={handleLogout}
             className="z-50 cursor-pointer 
             hover:scale-105 active:scale-95 m-6 transiton-all duration-300
            bg-yellow-300 translate-x-[5%] rounded-[25%] w-2/3 text-[42px] font-extrabold  text-gray-900 blur-[5%] hover:blur-none border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm"

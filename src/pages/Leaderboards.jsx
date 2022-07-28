@@ -48,7 +48,7 @@ export default function Leaderboards() {
               </div>
               <button onClick={() => console.log('a')} className=' w-[40%]  px-6 py-2 bg-transparent shadow-cool rounded-lg
               border-2 border-gray-900 text-black brightness-0 text-[24px] uppercase absolute
-               -bottom-20 delay-500 duration-1000 group-hover:bottom-6 scale-0 group-hover:scale-125'>Load more</button>
+               -bottom-20 delay-500 duration-1000 group-hover:bottom-10 scale-0 group-hover:scale-125'>Load more</button>
             </div>
           </div>
         </div>
