@@ -15,9 +15,10 @@ export default function Results() {
     const navigate = useNavigate();
     const points = parseInt(location.state.uPoints);
     const score = parseInt(location.state.uScore);
-    const questions = (location.state.all)?.split('?').splice(1,10)
-    const choices = (location.state.choices)?.replaceAll(';',',').split(',').splice(3,11)
-    const rights = (location.state.rights)?.split(',').splice(3,11)
+    console.log(location.state.all)
+    const questions = (location.state.all)?.split('tempword').splice(0,11)
+    const choices = (location.state.choices)?.replaceAll(';',',').split(',').splice(0,12)
+    const rights = (location.state.rights)?.split('tempword').splice(0,11)
     console.log(rights)
     console.log(choices)
     console.log(questions)
@@ -44,12 +45,12 @@ export default function Results() {
 
 
     function storePoints() {
-      addDoc(pointsRef, {name: auth?.currentUser.displayName, points: points}).then(res => { console.log(res.id)}).catch(err => console.log(err.message))
+      addDoc(pointsRef, {name: auth?.currentUser?.displayName, points: points}).then(res => { console.log(res.id)}).catch(err => console.log(err.message))
     }
 
     useEffect(() => {
       storePoints();
-      console.log(auth?.currentUser.uid)
+      console.log(auth?.currentUser?.uid)
     }, [])
 
     const docRef = doc(pointsRef, '1435Afustw62Pz5yow4l')

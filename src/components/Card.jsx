@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function Card({option, picked}) {
-  console.log(option)
   return (
     <div className='w-1/3  breaks-words max-w-[700px] active:animate-ping-once relative m-2 flex flex-col  justify-center items-center'>
         <div className='

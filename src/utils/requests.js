@@ -7,7 +7,7 @@ export default {
     fetchBooks: {
         title: 'Books',
         url: '&category=10&difficulty=medium&type=multiple',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmWCwQaN7opzXcngq6i_PmaKB0XcwsHXG7iA&usqp=CAU'
+        image: 'https://cdn.penguin.co.uk/dam-assets/books/9780241361474/9780241361474-jacket-large.jpg'
     },
     fetchFilm: {
         title: 'Film',

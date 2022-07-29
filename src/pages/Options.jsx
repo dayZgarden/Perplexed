@@ -67,7 +67,7 @@ export default function Options() {
         <div className="backdrop-blur-lg backdrop-opacity-70 h-full w-full flex flex-col items-center justify-center">
           <button
             onClick={() => navigate("/genres")}
-            className="z-50 cursor-pointer 
+            className="flex items-center justify-center z-50 cursor-pointer 
             hover:scale-105 active:scale-95  transiton-all duration-300
            bg-orange-400 md:translate-x-[12%] rounded-[2%] w-[100%]  md:w-2/3 text-[42px] m-6 font-extrabold text-gray-900 blur-[5%] hover:blur-none border-2 p-8 md:p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm"
           >
@@ -76,14 +76,14 @@ export default function Options() {
           <button
             onClick={() => navigate("/leaderboards")}
             className="z-50 break-words sm:break-words cursor-pointer 
-            hover:scale-105 active:scale-95 m-6 transiton-all duration-300
+            hover:scale-105 flex items-center justify-center active:scale-95 m-6 transiton-all duration-300
            bg-purple-400 md:-translate-x-[7%] rounded-[11%] w-[100%]  md:w-2/3 text-[42px] font-extrabold text-gray-900 blur-[5%] hover:blur-none border-2 p-8 md:p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm"
           >
             View Leaderboards
           </button>
           <button
             onClick={handleLogout}
-            className="z-50 cursor-pointer 
+            className="z-50 cursor-pointer flex items-center justify-center 
             hover:scale-105 active:scale-95 m-6 transiton-all duration-300
            bg-yellow-300 md:translate-x-[5%] rounded-[25%] w-[100%]  md:w-2/3 text-[42px] font-extrabold  text-gray-900 blur-[5%] hover:blur-none border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm"
           >

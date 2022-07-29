@@ -52,13 +52,24 @@ export default function Landing() {
     const location = useLocation();
     const query = location.state.query;
     const title = location.state.title
-    console.log(query)
 
     useEffect(() => {
-        setEntireList(entireList + (results?.question))
-        setEveryChoice((everyChoice + (pick + ', ')))
-        setEveryCorrect((everyCorrect + (correct + ', ')))
     }, [results])
+
+    useEffect(() => {
+        console.log(temp)
+        let qArr = []
+        let cArr = []
+        temp.map((elem) => {
+            console.log(elem.question)
+            qArr += elem.question + 'tempword'
+            cArr += elem.correct_answer + 'tempword'
+        })
+        qArr.length > 0 && setEntireList(qArr)
+        cArr.length > 0 && setEveryCorrect(cArr)
+        
+    }, [temp])
+
 
     useEffect(() => {
         getQuestions(query).then(res => {
@@ -95,8 +106,8 @@ export default function Landing() {
     }, [correct, incorrect])
 
     if(x===10){
-        setEntireList(entireList)
-        setEveryChoice(everyChoice)
+        console.log(everyChoice)
+        console.log(everyChoice[10])
         navigate('/results', 
         {
             state:{
@@ -126,8 +137,11 @@ export default function Landing() {
             setModal(true)
             setPoints(points + 1000)
             setScore(score + 1)
+            setEveryChoice((everyChoice + (pick + ', ')))
+
         }
         else if(y>=1){
+            setEveryChoice((everyChoice + (pick + ', ')))
             setModal(true)
             if(points <= 500){
                 setPoints(0)
@@ -203,7 +217,7 @@ export default function Landing() {
             </div>}
         {!modal && <div className='text-white font-bold flex items-center justify-center flex-col translate-y-[15%]'>
             <div className="'text-center break-words z-50 flex items-center justify-center
-                                hover:scale-[102%] cursor-default bg-yellow-300 transiton-all duration-300
+                                 cursor-default bg-yellow-300 transiton-all duration-300
                                  rounded-[1%] flex-1 text-[32px] font-bold text-gray-900 border-2 border-gray-900 overflow-hidden shadow-cool active:shadow-sm m-2 p-5 max-w-1200 ">
                 {results?.question?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
             </div>

@@ -20,12 +20,12 @@ export default function Genres() {
 
 
   return (
-    <div className='h-[120vh] w-full bg-gradient-to-r from-gray-500 via-indigo-200 to-slate-300'>
+    <div className='h-[100vh] overflow-scroll scrollbar-hide w-full bg-gradient-to-r from-neutral-900 via-stone-600 to-stone-800'>
         <div className='h-full backdrop-blur-lg'>
             <h1 className=' w-[80%] text-center tracking-wider bg-transparent text-white brightness-0  font-extrabold text-[58px] border-4 border-gray-900 shadow-cool uppercase p-4
             mx-auto translate-y-[15%] mb-8'>Choose any Genre</h1>
             <div className='p-4 
-             flex justify-center items-center flex-wrap'>
+             flex justify-center items-center flex-wrap bg-transparent'>
             {Object.entries(requests).map(([key, {title, url, image}]) => (
                 <Genre key = {key} handleClick={handleClick} title = {title} url = {url} image = {image}/>
             ))}

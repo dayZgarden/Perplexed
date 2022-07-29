@@ -20,7 +20,7 @@ export default function Question({question, choice, right}) {
     const arr = Object.entries(obj)
     console.log(arr)
 
-    console.log(question)
+
   return (
     <div className='bg-gradient-to-r w-full from-black via-slate-800 h-full'>
 
@@ -35,7 +35,7 @@ export default function Question({question, choice, right}) {
                         </div>
                         <div className='flex flex-col'>
                             <div className='text-[32px] z-50'>
-                                {e[1].question?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}?
+                                {e[1].question?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
                             </div>
                             <div className='my-1 text-[24px]'>
                                 You Chose: {e[1].choice?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
@@ -44,7 +44,8 @@ export default function Question({question, choice, right}) {
                                  Correct Answer: {e[1].answer?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")}
                             </div>
                         </div>
-                        {(e[1].choice === e[1].answer) 
+                        {(e[1].choice?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")
+                         === e[1].answer?.replaceAll(';','').replaceAll('&','').replaceAll('#','').replaceAll('quot','"').replaceAll('039',"'")) 
                         ?  
                         <div className='absolute top-[50%] 
                         -translate-y-1/2 right-2 text-green-500 w-16 h-16'><CheckIcon /></div> 

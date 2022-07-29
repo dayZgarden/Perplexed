@@ -47,7 +47,8 @@ module.exports = {
         'general' : 'url(https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2019/12/23173546/Basic-General-Knowledge-for-Competitive-Exams-.jpg)',
         'dark' : 'url(https://images.pexels.com/photos/2537536/pexels-photo-2537536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
         'dark2': 'url(https://images.pexels.com/photos/1830252/pexels-photo-1830252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
-        'defaultpic' : 'url(https://www.nicepng.com/png/detail/933-9332131_profile-picture-default-png.png)'
+        'defaultpic' : 'url(https://www.nicepng.com/png/detail/933-9332131_profile-picture-default-png.png)',
+        'space' : 'url(https://static.scientificamerican.com/sciam/cache/file/ED7F4299-8CC9-47D8-BD3B97FB2A47B19F_source.jpg)'
       }
     },
   },
