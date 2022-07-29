@@ -1,18 +1,33 @@
 import { HomeIcon } from '@heroicons/react/solid'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import goku from '../../public/goku.png'
 import Nav from '../components/Nav'
 import { useNavigate } from 'react-router-dom'
+import  auth  from '../firebase/fire'
+import { onSnapshot } from 'firebase/firestore'
+import { pointsRef } from '../utils/firestore.collections'
 
 
 export default function Leaderboards() {
 
   const navigate = useNavigate();
+  const [score, setScore] = useState(0);
+
+  useEffect(() => {
+    const stack = onSnapshot(pointsRef, snapshot => {
+      setScore(snapshot.docs.map(doc => {
+        return {
+          data: doc.data(), 
+          id: doc.id
+        }
+      }))
+    })
+  },[])
 
   return (
     <div className='h-screen bg-gradient-to-r from-black via-slate-900 to-black'>
       <div className='group fixed top-12 left-12 flex flex-col items-center'>
-        <button onClick={() => navigate('/genres')} className=' hover:scale-125
+        <button onClick={() => navigate('/options')} className=' hover:scale-125
         active:scale-110 transition-all duration-500 text-white w-20 h-20 '>
           <HomeIcon/>
         </button>
@@ -27,7 +42,7 @@ export default function Leaderboards() {
                 <figure className="border-4 w-[30%] h-[50%] bg-black rounded-full flex items-center justify-center">
                   <img className="invert w-[100%] h-[100%] p-12" src={goku} alt="" />
                 </figure>
-                <h1 className=''>username | 1500 points</h1>
+                <h1 className=''>{auth.currentUser.displayName} | 1500 points</h1>
                 <h1 className=''>Rank | 42</h1>
               </div>
             </div>

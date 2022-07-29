@@ -4,7 +4,10 @@ import { sendSignInLinkToEmail } from 'firebase/auth';
 import React, {useState, useEffect, useRef} from 'react'
 import { useLocation, Link, useNavigate } from 'react-router-dom'
 import Question from '../components/Question';
-
+import { collection, addDoc, doc, updateDoc } from 'firebase/firestore';
+import auth from '../firebase/fire';
+import { pointsRef } from '../utils/firestore.collections';
+import { db } from '../firebase/fire';
 
 export default function Results() {
 
@@ -32,6 +35,25 @@ export default function Results() {
       }, 1000)
     }, [])
 
+    const ref = db.ref
+    ref?.on('value', (snapshot) => {
+      console.log(snapshot.val());
+    }, (errorObject) => {
+      console.log('The read failed: ' + errorObject.name);
+    }); 
+
+
+    function storePoints() {
+      addDoc(pointsRef, {name: auth?.currentUser.displayName, points: points}).then(res => { console.log(res.id)}).catch(err => console.log(err.message))
+    }
+
+    useEffect(() => {
+      storePoints();
+      console.log(auth?.currentUser.uid)
+    }, [])
+
+    const docRef = doc(pointsRef, '1435Afustw62Pz5yow4l')
+    updateDoc(docRef, {points: (points + 1000)}).then(res => { console.log(res?.id)}).catch(err => console.log(err.message))
 
   return (
     <div className='scrollbar-hide h-screen bg-idk2 bg-center bg-cover min-h-full'>

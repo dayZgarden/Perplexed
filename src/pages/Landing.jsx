@@ -40,6 +40,13 @@ export default function Landing() {
     return () => clearInterval(timer);
     })
 
+    useEffect(() => {
+        if(seconds === 10){
+            setPick('Out of Time')
+            setY(y+1)
+        }
+    }, [seconds])
+
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -105,6 +112,7 @@ export default function Landing() {
     function toggleModal() {
         setModal(!modal)
         setX(x + 1);
+        setSeconds(0);
     }
 
     const picked = event => {
@@ -146,14 +154,14 @@ export default function Landing() {
         </div>}
 
         {!exit && !loading && <div className='scrollbar-hide backdrop-blur-xl backdrop-brightness-95 backdrop-opacity-70 h-full'>
-        <div id='timer' className='fixed top-3 left-3 text-white text-[64px] font-extrabold
-        px-4 py-2 rounded-full'>{seconds}</div>
+        <div id='timer' className='fixed border-b-4 top-3 right-10 p-4 text-white text-[72px] font-extrabold
+        px-4 py-2  brightness-150'>{10 - seconds}</div>
         {!modal && <div className='break-all 
                                 cursor-default bg-orange-400 transiton-all duration-300
                                  rounded-[1%] flex-1 text-[42px] font-bold text-gray-900 border-2 flex items-center justify-center
                                   border-gray-900 overflow-hidden 
-                                shadow-cool active:shadow-sm max-w-[1000px] mx-auto h-[15%] tracking-wide text-center'>{title} | {x+1} of 10 | Points: {points}</div>}
-        {!modal && <button onClick={()=> setExit(!exit)} className='fixed cursor-pointer hover:scale-105 active:scale-90 hover:bg-purple-400  top-6 right-6 w-12 h-12 text-gray-900
+                                shadow-cool active:shadow-sm max-w-[1000px] mx-auto h-[15%] tracking-wide text-center'>{title} | {x+1} of 10 | Points: {points} </div>}
+        {!modal && <button onClick={()=> setExit(!exit)} className='fixed cursor-pointer hover:scale-105 active:scale-90 hover:bg-purple-400  top-6 left-6 w-12 h-12 text-gray-900
         transition-all duration-300 bg-yellow-300 border-gray-900 border-4'><XIcon/></button>}
 
         {(modal) && <div className='h-[103vh] overflow-hide bg-dark2 bg-center bg-fill flex items-center
@@ -185,7 +193,7 @@ export default function Landing() {
                            <div className='2xl:mt-8 w-[45%] 2xl:w-[80%]
                                p-[2px] rounded-[20%] hover:scale-105 active:scale-95
                                transition-all duration-500 bg-gradient-to-b from-slate-800 via-gray-900 to-blackish shadow-cool active:shadow-md'> 
-                               <button className='invert rounded-[21%] px-16 py-10 text-[42px] bg-gradient-to-t from-blue-800  to-rose-800 tracking-wider font-extrabold' onClick={toggleModal}>Check Results</button>
+                               <button className='invert w-full rounded-[21%] px-16 py-10 text-[42px] bg-gradient-to-t from-blue-800  to-rose-800 tracking-wider font-extrabold' onClick={toggleModal}>Check Results</button>
                            </div>}
                         </div>
                     </div>
