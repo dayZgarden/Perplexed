@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path='/' element = {<Register/>}/>
+          <Route path='/' element = {<Register/>} />
           <Route path='/options' element = {<Options/>}/>
           <Route path='/genres' element = {<Genres/>}/>
           <Route path='/landing' element = {<Landing/>}/>

@@ -4,15 +4,21 @@ export default {
         url: '&category=9&difficulty=medium&type=multiple',
         image: 'https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2019/12/23173546/Basic-General-Knowledge-for-Competitive-Exams-.jpg'  
     },
-    fetchBooks: {
-        title: 'Books',
-        url: '&category=10&difficulty=medium&type=multiple',
-        image: 'https://cdn.penguin.co.uk/dam-assets/books/9780241361474/9780241361474-jacket-large.jpg'
-    },
+
     fetchFilm: {
         title: 'Film',
         url: '&category=11&difficulty=medium&type=multiple',
         image: 'https://static.posters.cz/image/1300/kalendare/avengers-infinity-war-i62710.jpg'
+    },
+    fetchAnime: {
+        title: 'Anime',
+        url: '&category=31&difficulty=medium&type=multiple',
+        image: 'https://images.immediate.co.uk/production/volatile/sites/3/2022/01/attack-on-titan-vanguard-05c93d7.jpg?quality=90&resize=620,413'
+    },
+    fetchCartoons: {
+        title: 'Cartoons',
+        url: '&category=32&difficulty=medium&type=multiple',
+        image: 'https://www.gannett-cdn.com/media/USATODAY/popcandy/2012/10/30/regularshow-16_9.jpg'
     },
     fetchMusic: {
         title: 'Music',
@@ -69,6 +75,11 @@ export default {
         url: '&category=22&difficulty=medium&type=multiple',
         image: 'https://educationblog.oup.com/wp-content/uploads/2015/09/oup_58381-705x435.jpg'
     },
+    fetchBooks: {
+        title: 'Books',
+        url: '&category=10&difficulty=medium&type=multiple',
+        image: 'https://cdn.penguin.co.uk/dam-assets/books/9780241361474/9780241361474-jacket-large.jpg'
+    },
     fetchHistory: {
         title: 'History',
         url: '&category=23&difficulty=medium&type=multiple',
@@ -109,14 +120,5 @@ export default {
         url: '&category=30&difficulty=medium&type=multiple',
         image: 'https://miro.medium.com/max/1400/1*aieXF-g9qZrxGro8D07rCg.jpeg'
     },
-    fetchAnime: {
-        title: 'Anime',
-        url: '&category=31&difficulty=medium&type=multiple',
-        image: 'https://images.immediate.co.uk/production/volatile/sites/3/2022/01/attack-on-titan-vanguard-05c93d7.jpg?quality=90&resize=620,413'
-    },
-    fetchCartoons: {
-        title: 'Cartoons',
-        url: '&category=32&difficulty=medium&type=multiple',
-        image: 'https://www.gannett-cdn.com/media/USATODAY/popcandy/2012/10/30/regularshow-16_9.jpg'
-    },
+
 }
