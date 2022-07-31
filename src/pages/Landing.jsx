@@ -43,7 +43,7 @@ export default function Landing() {
     })
 
     useEffect(() => {
-        if(seconds === 100000000000000){
+        if(seconds === 10){
             setPick('Out of Time')
             setY(y+1)
         }
