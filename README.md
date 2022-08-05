@@ -2,11 +2,12 @@
 
 Built With
 
-<!-- PROJECT LOGO -->
+<!-- PROJECT LOGO -->!
+
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://user-images.githubusercontent.com/106930540/183218305-ee70be2e-fe81-4d9a-bbd2-20bbe4277077.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">project_title</h3>
