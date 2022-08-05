@@ -7,7 +7,7 @@ Built With
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="https://user-images.githubusercontent.com/106930540/183218305-ee70be2e-fe81-4d9a-bbd2-20bbe4277077.png" alt="Logo" width="640" height="640">
+    <img src="https://user-images.githubusercontent.com/106930540/183218305-ee70be2e-fe81-4d9a-bbd2-20bbe4277077.png" alt="Logo" width="1040" height="840">
   </a>
 
 <h3 align="center">dayZtrivia</h3>
