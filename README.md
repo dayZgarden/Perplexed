@@ -7,7 +7,7 @@ Built With
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="https://user-images.githubusercontent.com/106930540/183218305-ee70be2e-fe81-4d9a-bbd2-20bbe4277077.png" alt="Logo" width="1040" height="840">
+    <img src="https://user-images.githubusercontent.com/106930540/183218305-ee70be2e-fe81-4d9a-bbd2-20bbe4277077.png" alt="Logo" width="840" height="600">
   </a>
 
 <h3 align="center">dayZtrivia</h3>
@@ -15,14 +15,14 @@ Built With
   <p align="center">
     Fullstack trivia game with 32 available genres, 3 difficulties, and a way to learn new facts.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/dayZgarden/dayZtrivia"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="day-ztrivia-406edob56-dayzgarden.vercel.app">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="mailto:zyad.alkurdi22@gmail.com">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="mailto:zyad.alkurdi22@gmail.com">Request Feature</a>
   </p>
 </div>
 
