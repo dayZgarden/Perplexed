@@ -73,7 +73,6 @@
 2. Install NPM packages
    ```sh
    npm install
-     npm install firebase
      npm install heroicons/react
      npm install axios
      npm install firebase
