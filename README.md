@@ -57,7 +57,9 @@
 
 ## Languages
 
-* 
+* [![html5][html5]][html5-url]
+* [![css3][css3]][css3-url]
+* [![JavaScript][JavaScript]][JavaScript-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
