@@ -3,13 +3,15 @@
 <br />
 <div align="center">
   <a target="_blank" href="https://day-ztrivia.vercel.app/">
-    <img src="https://user-images.githubusercontent.com/106930540/183218305-ee70be2e-fe81-4d9a-bbd2-20bbe4277077.png" alt="Logo" width="840" height="600">
+    <img src="https://user-images.githubusercontent.com/106930540/183218305-ee70be2e-fe81-4d9a-bbd2-20bbe4277077.png" alt="Logo" width="940" height="720">
   </a>
 
 <h3 align="center">dayZtrivia</h3>
 
   <p align="center">
-    Fullstack trivia game with 32 available genres, 3 difficulties, and a way to learn new facts.
+    Fullstack trivia game with 32 available genres and 3 difficulties in a multiple choice format. Features include Firebase account creation and sign in/sign out,
+    fully functionaly leaderboard that displays rank-user-points, 10 second timer for each question, shows right answer when you guess, as well as a results page 
+    displaying all the answers and your choices, as well as your score. Points save to your account when you logout. 
     <br />
     <a href="https://github.com/dayZgarden/dayZtrivia"><strong>Explore the docs »</strong></a>
     <br />
@@ -58,7 +60,7 @@
 ### Getting Started
 
 * [![React][React.js]][React-url]
-* [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
+* [![tailwindcss][tailwindcss]][tailwindcss-url]
 * [![Firebase][Firebase]][Firebase-url]
 * [![Heroicons][Heroicons/react]][Heroicons-url]
 
@@ -179,6 +181,8 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
+[tailwindcss]: https://camo.githubusercontent.com/e9b080a6541e5355827ea91b6a0302cbbc54af4705b0c6b0f1561a0957ced2fb/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5461696c77696e645f4353532d3338423241433f7374796c653d666f722d7468652d6261646765266c6f676f3d7461696c77696e642d637373266c6f676f436f6c6f723d7768697465
+[tailwindcss-url]: https://tailwindcss.com/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
