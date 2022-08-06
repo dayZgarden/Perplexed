@@ -14,7 +14,7 @@
     <a href="https://github.com/dayZgarden/dayZtrivia"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="day-ztrivia-406edob56-dayzgarden.vercel.app">View Demo</a>
+    <a target="_blank" href="https://day-ztrivia.vercel.app/">View Demo</a>
     ·
     <a href="mailto:zyad.alkurdi22@gmail.com">Report Bug</a>
     ·
@@ -58,6 +58,9 @@
 ### Getting Started
 
 * [![React][React.js]][React-url]
+* [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
+* [![Firebase][Firebase]][Firebase-url]
+* [![Heroicons][Heroicons/react]][Heroicons-url]
 
 ### Functionality
 
