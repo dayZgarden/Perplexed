@@ -63,8 +63,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Getting Started
 
 * [![React][React.js]][React-url]
@@ -117,8 +115,8 @@ Don't forget to give the project a star! Thanks again!
 
 ## Contact
 
-Zyad Alkurdi - [@](https://twitter.com/twitter_handle) - email@email_client.com
-Zyad Alkurdi - [@](https://twitter.com/twitter_handle) - email@email_client.com
+* [![linkedin][linkedin]][linkedin-url]
+* [![twitter][twitter]][twitter-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -155,3 +153,7 @@ Zyad Alkurdi - [@](https://twitter.com/twitter_handle) - email@email_client.com
 [html5-url]: https://developer.mozilla.org/en-US/docs/Glossary/HTML5
 [JavaScript]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
 [JavaScript-url]: https://www.javascript.com/
+[twitter]: https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white
+[twitter-url]: https://twitter.com/zdaisygarden
+[linkedin]: https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white
+[linkedin-url]: www.linkedin.com/in/zyadalkurdi
