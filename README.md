@@ -63,6 +63,7 @@
 * [![vite][vite]][vite-url]
 * [![react-router][react-router]][react-router-url]
 * [![vercel][vercel]][vercel-url]
+* [![node.js][node.js]][node.js-url]
 
 ### Functionality
 
@@ -143,6 +144,8 @@ Don't forget to give the project a star! Thanks again!
 [html5-url]: https://developer.mozilla.org/en-US/docs/Glossary/HTML5
 [JavaScript]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
 [JavaScript-url]: https://www.javascript.com/
+[node.js]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
+[node.js-url]: https://nodejs.org/en/
 [twitter]: https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white
 [twitter-url]: https://twitter.com/zdaisygarden
 [linkedin]: https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white
