@@ -33,10 +33,6 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Languages</a></li>
-      </ul>
-    </li>
-    <li>
-      <ul>
         <li><a href="#prerequisites">Getting Started</a></li>
         <li><a href="#installation">Functionality</a></li>
       </ul>
