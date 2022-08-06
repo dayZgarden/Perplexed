@@ -1,7 +1,5 @@
 # dayZtrivia
 
-Built With
-
 <br />
 <div align="center">
   <a href="https://github.com/dayZgarden/dayZtrivia">
@@ -57,20 +55,15 @@ Built With
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+### Getting Started
 
 * [![React][React.js]][React-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Getting Started
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
-  npm install npm@latest -g
+  npm run dev
   ```
 
 ### Installation
