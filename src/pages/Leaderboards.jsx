@@ -72,7 +72,7 @@ export default function Leaderboards() {
                  tracking-normal flex justify-center'>Rank {rank} : {score} points</div>
               </div>
             </div>
-            <div className='absolute my-rotate-y-180 backface-hidden w-full h-full border-purple-400
+          <div className='absolute my-rotate-y-180 backface-hidden w-full h-full border-purple-400
              border-4 bg-gray-50'>
               <div className='font-bold h-full text-[20px] tracking-wide flex flex-col  items-center'>
                   <h1 className='text-center text-[28px] mt-2 mb-8 break-words font-extrabold tracking-wide w-[80%] mx-auto shadow-cool border-2 border-gray-900 brightness-0'>LEADERBOARDS</h1>

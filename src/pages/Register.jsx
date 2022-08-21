@@ -120,10 +120,9 @@ export default function Register() {
             <div className='w-[95%]' >
                 <div className='flex items-center w-full justify-between'>
                     <div className='flex flex-col justify-center sm:flex-row ml-2 sm:ml-6 md:space-x-2 items-center'>
-                        <img className='hidden sm:inline ml-4 invert contain w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20' src="https://day-ztracker.vercel.app/assets/icons8-flat-60.png" alt="" />
                         <h1 className='text-white py-6 px-4 md:m-4  font-extrabold tracking-wide
                         text-[34px] sm:text-[32px] md:text-[48px]'>
-                            dayZtrivia
+                            Perplexed
                         </h1>
                     </div>
                     <button onClick={() => setExist(true)} className='font-bold text-center break-words z-50
@@ -148,7 +147,7 @@ export default function Register() {
                                  -left-[50px] delay-[.35s] duration-[1s] group-hover:left-3 scale-0 group-hover:scale-100 md:-translate-x-[7%] lg:translate-x-[5%] xl:-translate-x-[12%] cursor-default bg-orange-400 transiton-all
                                  rounded-[4%] text-[24px] text-gray-900 border-2 border-gray-900 overflow-hidden shadow-cool active:shadow-sm m-4 py-8 px-6'><span className='font-extrabold'>Start competing 
                     </span> with the <span className='font-extrabold'>award winning </span> 
-                    trivia platform <span className='font-extrabold'>dayZtrivia</span></h1>
+                    trivia platform <span className='font-extrabold'>Perplexed</span></h1>
                     <button onClick={() => setCreate(true)} className='font-bold text-center break-words z-50
                                 hover:scale-[103%] cursor-pointer bg-purple-400 transiton-all 
                                 -bottom-20 delay-500 duration-1000 group-hover:bottom-3 scale-0 group-hover:scale-100 w-5/6  mx-auto rounded-[11%] text-[28px] text-gray-900 mb-8 border-2 border-gray-900 overflow-hidden shadow-cool active:shadow-lg m-4 py-8 px-6'

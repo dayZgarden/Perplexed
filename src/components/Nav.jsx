@@ -6,10 +6,9 @@ export default function Nav() {
         <div className='w-[95%]' >
             <div className='flex items-center w-full justify-between'>
                 <div className='flex ml-6 space-x-1 items-center'>
-                    <img className='ml-4 invert contain w-20 h-20' src="https://day-ztracker.vercel.app/assets/icons8-flat-60.png" alt="" />
                     <h1 className='text-white py-6 px-4 m-4  font-extrabold tracking-wide
                     text-[48px]'>
-                        dayZtrivia
+                        Perplexed
                     </h1>
                 </div>
                 <button className='font-bold text-center break-words z-50
