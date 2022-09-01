@@ -33,9 +33,13 @@ module.exports = {
       },
       boxShadow: {
         'cool': '5px 7px 0px 0px rgb(17 24 49)',
-        'cool2' : '5px 7px 5px 0px rgb(17 24 49)',
         'cool-effect': '0 5px 0 #58a700',
         'cool-effect2': '0 0 0 #58a700',
+        'cool2': '3px 4px 0px 0px rgb(0 0 0)',
+      },
+      fontFamily: {
+        Bebas: ['Bebas Neue, cursive'],
+        Inria: ['Inria Sans, sans-serif'],
       },
       backgroundImage: {
         'idk': 'url(https://images.pexels.com/photos/350749/pexels-photo-350749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
