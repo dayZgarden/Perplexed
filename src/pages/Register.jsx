@@ -67,11 +67,11 @@ export default function Register() {
     }
   }
 
-  useEffect(() => {
-      if(user?.uid){
-          navigate('/options')
-      }
-  })
+  // useEffect(() => {
+  //     if(user?.uid){
+  //         navigate('/options')
+  //     }
+  // })
 
   useEffect(() => {
     if (x === 0) {
