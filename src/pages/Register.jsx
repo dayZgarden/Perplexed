@@ -32,7 +32,6 @@ import arrow1 from "../assets/arrow1.svg";
 import arrow2 from "../assets/arrow2.svg";
 import arrow3 from "../assets/arrow3.svg";
 import triviagames from "../assets/triviagames.svg";
-import community from "../assets/community.svg";
 import bigprizes from "../assets/bigprizes.svg";
 import orangeTriangle from "../assets/orangetriangle.svg";
 import purpleTriangle from "../assets/purpleTriangle.svg";
@@ -305,7 +304,7 @@ export default function Register() {
               <div className="w-[60%] max-w-[1280px] mx-auto border-t-[6px] border-black mb-[132px]"></div>
 
               <section className="h-[100vh] max-w-[1280px] mx-auto relative">
-              <img className="absolute top-[100px] left-[-45px] opacity-80" src={community} alt="" />
+              <img className="absolute top-[100px] left-[-45px] opacity-80" src={bigprizes} alt="" />
               <img className="absolute top-[180px] animate-spin left-[350px] " src={orangeTriangle} alt="" />
               <img className="absolute bottom-[140px] left-[500px] animate-spin delay-100 " src={yellowTriangle} alt="" />
               <img className="absolute top-[140px] right-[150px] animate-spin" src={purpleTriangle} alt="" />
