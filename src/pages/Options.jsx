@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate,  } from "react-router-dom";
 import goku from '../../public/goku.png'
+import questiomark from '../../public/questionmark.svg'
 import head from '../../public/head.svg'
 import  auth  from '../firebase/fire'
 import logout from "../utils/logout";
@@ -46,7 +47,7 @@ async function getPostByUid() {
           <h1 className="flex-1"> {auth.currentUser?.displayName} </h1>
         </div>
           <figure className="border-4 w-[100%] h-full md:h-[30%] lg:h-[40%] xl:h-[50%] md:w-[60%] xl:w-[50%]  bg-black rounded-full flex items-center justify-center">
-            <img className="invert h-[100%] w-[90%] sm:h-[90%] p-12" src={goku} alt="" />
+            <img className="invert h-[100%] w-[90%] sm:h-[90%] p-12" src={questiomark} alt="" />
           </figure>
           <div className="flex m-8 mb-16">
             <button className="hover:scale-105 text-[16px] w-[48%] m-2 active:scale-100 shadow-cool3  hover:bg-white hover:text-black transition-all duration-500 px-4  py-2 border-4 font-bold">

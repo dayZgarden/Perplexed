@@ -33,7 +33,7 @@ import arrow2 from "../assets/arrow2.svg";
 import arrow3 from "../assets/arrow3.svg";
 import triviagames from "../assets/triviagames.svg";
 import bigprizes from "../assets/bigprizes.svg";
-import community from "../assets/community.svg";
+import community from "../../public/community.svg";
 import { FiMenu } from "react-icons/fi";
 import { FiClock } from "react-icons/fi";
 import { ArrowLeftIcon } from "@heroicons/react/solid";
@@ -366,8 +366,7 @@ export default function Register() {
                 <div className="mt-28 flex flex-col-reverse  lg:flex-row">
                   <div className="flex flex-col w-[90%] lg:w-[45%] mx-auto mt-12 lg:mx-0 lg:mt-0">
                     <h1 className=" font-Bebas text-[52px]  leading-[58px] w-[100%]">
-                      Collect coins through trivia and then spin the wheel to
-                      win big.
+                      Compete against friends in head to head trivia games. 
                     </h1>
                     <ul className="mt-8 space-y-8 flex flex-col h-[320px] justify-between">
                       <li className="flex items-center">
@@ -390,11 +389,10 @@ export default function Register() {
                         </figure>
                         <div className="flex flex-col ml-8">
                           <h1 className="text-[40px] font-Bebas leading-[43px]">
-                            Find out what you know
+                            Connect with friends
                           </h1>
                           <h2 className="font-Inria w-[70%] text-[24px] leading-[19px]">
-                            After creating an account, start playing free trivia
-                            quizzes to start learning.
+                            Add your friends and family then freely compete against each other.
                           </h2>
                         </div>
                       </li>
@@ -404,11 +402,10 @@ export default function Register() {
                         </figure>
                         <div className="flex flex-col ml-8">
                           <h1 className="text-[40px] font-Bebas leading-[43px]">
-                            Find out what you know
+                            Start competing
                           </h1>
                           <h2 className="font-Inria w-[70%] text-[24px] leading-[19px]">
-                            After creating an account, start playing free trivia
-                            quizzes to start learning.
+                            Compete against people all over the world in head to head trivia games. 
                           </h2>
                         </div>
                       </li>
