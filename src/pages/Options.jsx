@@ -40,8 +40,8 @@ async function getPostByUid() {
 
   return (
     //fade in the user
-    <div className="text-white overflow-scroll scrollbar-hide flex-col md:flex-row h-screen text-center flex  items-center bg-gradient-to-r from-black via-slate-900 to-black ">
-      <div className="md:w-1/2 w-[60%] md:border-r-2 h-full flex flex-col items-center justify-center">
+    <div className="text-white overflow-scroll scrollbar-hide flex-col md:flex-row h-screen text-center flex   items-center bg-gradient-to-b from-black via-slate-900 to-black ">
+      <div className="md:w-1/2 w-[60%]  h-full flex flex-col items-center justify-center">
         <div className='invert lg:w-[65%] text-center tracking-wider bg-transparent text-white brightness-0 font-extrabold text-[58px] border-4 border-gray-900 shadow-cool m-8 p-4 '>
           <h1 className="flex-1"> {auth.currentUser?.displayName} </h1>
         </div>
@@ -49,10 +49,10 @@ async function getPostByUid() {
             <img className="invert h-[100%] w-[90%] sm:h-[90%] p-12" src={goku} alt="" />
           </figure>
           <div className="flex m-8 mb-16">
-            <button className="hover:scale-105 text-[20px] w-[48%] m-2 active:scale-100 hover:bg-white hover:text-gray-900 transition-all duration-500 px-8 py-4 border-4 font-bold">
+            <button className="hover:scale-105 text-[16px] w-[48%] m-2 active:scale-100 shadow-cool3  hover:bg-white hover:text-black transition-all duration-500 px-4  py-2 border-4 font-bold">
               Edit Profile
             </button>
-            <button className="hover:scale-105 text-[20px] cursor-default w-[48%] m-2 active:scale-100 hover:bg-white hover:text-gray-900 transition-all duration-500 px-8 py-4 border-4 font-bold">
+            <button className="hover:scale-105 text-[16px] cursor-default w-[48%] m-2 shadow-cool3 active:scale-100 hover:bg-white hover:text-black transition-all duration-500 px-4 py-2 border-4 font-bold">
               Points: {score || '0'}
             </button>
           </div>
@@ -64,7 +64,7 @@ async function getPostByUid() {
             onClick={() => navigate("/genres")}
             className="flex items-center justify-center z-50 cursor-pointer 
             hover:scale-105 active:scale-95  transiton-all duration-300
-           bg-orange-400 md:translate-x-[12%] rounded-[2%] w-[100%]  md:w-2/3 text-[28px]  sm:text-[42px] m-6 font-extrabold text-gray-900 blur-[5%] hover:blur-none border-2 p-8 md:p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm"
+           bg-orange-400 md:translate-x-[12%] r] w-[100%]  md:w-2/3 text-[28px]  sm:text-[42px] m-6 font-extrabold text-black blur-[5%] border-4 p-8 md:p-12 border-black overflow-hidden shadow-cool2 active:shadow-sm"
           >
             Start Playing
           </button>
@@ -72,7 +72,7 @@ async function getPostByUid() {
             onClick={() => navigate("/leaderboards")}
             className="z-50 break-words sm:break-words cursor-pointer 
             hover:scale-105 flex items-center justify-center active:scale-95 m-6 transiton-all duration-300
-           bg-purple-400 md:-translate-x-[7%] rounded-[11%] w-[100%]  md:w-2/3 text-[28px]  sm:text-[42px] font-extrabold text-gray-900 blur-[5%] hover:blur-none border-2 p-8 md:p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm"
+           bg-purple-400 md:-translate-x-[7%]  w-[100%]  md:w-2/3 text-[28px]  sm:text-[42px] font-extrabold text-black blur-[5%] border-4 p-8 md:p-12 border-black overflow-hidden shadow-cool2 active:shadow-sm"
           >
             View Leaderboards
           </button>
@@ -80,7 +80,7 @@ async function getPostByUid() {
             onClick={handleLogout}
             className="z-50 cursor-pointer flex items-center justify-center 
             hover:scale-105 active:scale-95 m-6 transiton-all duration-300
-           bg-yellow-300 md:translate-x-[5%] rounded-[25%] w-[100%]  md:w-2/3 text-[28px]  sm:text-[42px] font-extrabold  text-gray-900 blur-[5%] hover:blur-none border-2 p-12 border-gray-900 overflow-hidden shadow-cool active:shadow-sm"
+           bg-yellow-300 md:translate-x-[5%] w-[100%]  md:w-2/3 text-[28px]  sm:text-[42px] font-extrabold  text-black blur-[5%] border-4 p-12 border-black overflow-hidden shadow-cool2 active:shadow-sm"
           >
             Sign Out
           </button>

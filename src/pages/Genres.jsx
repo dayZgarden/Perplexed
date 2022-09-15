@@ -20,9 +20,9 @@ export default function Genres() {
 
 
   return (
-    <div className='h-[100vh] overflow-scroll scrollbar-hide w-full bg-gradient-to-t from-black via-slate-800 to-indigo-900'>
+    <div className='h-[100vh] overflow-scroll scrollbar-hide w-full bg-[#FFD9C6]'>
         <div className='h-full backdrop-blur-lg'>
-            <h1 className=' w-[80%] text-center tracking-wider bg-transparent text-white brightness-0  font-extrabold text-[58px] border-4 border-gray-900 shadow-cool uppercase p-4
+            <h1 className=' w-[60%] text-center tracking-wider bg-transparent text-black   font-extrabold text-[58px] border-4 border-black shadow-cool2 uppercase p-4
             mx-auto translate-y-[15%] mb-12 sm:mb-8'>Choose any Genre</h1>
             <div className='p-4 
              flex justify-center items-center flex-wrap bg-transparent'>

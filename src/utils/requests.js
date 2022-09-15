@@ -38,7 +38,7 @@ export default {
     fetchVideoGames: {
         title: 'Video Games',
         url: '&category=15&difficulty=medium&type=multiple',
-        image: 'https://cdn.givemesport.com/wp-content/uploads/2022/05/ar10dh-e1655218577884-1200x900-c-default.jpg'
+        image: 'https://cdn.akamai.steamstatic.com/steam/apps/42700/capsule_616x353.jpg?t=1654809667'
     },
     fetchBoardGames: {
         title: 'Board Games',
