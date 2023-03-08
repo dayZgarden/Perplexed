@@ -31,6 +31,11 @@ module.exports = {
         'coolgreen': '#94825F',
         'blackish' : '#232526'
       },
+      transformOrigin: {
+        '24': '6rem',
+        'full': '100%',
+        '0': '0%',
+       },
       boxShadow: {
         'cool': '5px 7px 0px 0px rgb(17 24 49)',
         'cool-effect': '0 5px 0 #58a700',

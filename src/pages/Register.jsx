@@ -22,8 +22,8 @@ import question from "../assets/question.svg";
 import lottie from "lottie-web";
 import brain from "../assets/brain.json";
 import wheel from "../assets/wheel.svg";
+import comp from '../../public/comp.jpeg'
 import friends from "../assets/friends.json";
-import wheelArrow from "../assets/wheelArrow.svg";
 import readyArrow from "../assets/readyArrow.svg";
 import cards from "../assets/cards.svg";
 import rank from "../assets/rank.svg";
@@ -280,7 +280,7 @@ export default function Register() {
 
               <section className="h-[100vh] relative max-w-[1280px] mx-auto my-[132px]">
                 <div>
-                  <h1 className="bg-white w-[80%] lg:w-[50%] mx-auto text-center border-4 border-black p-4 rounded-md rotate-[-1deg] shadow-cool2 font-Bebas text-[64px]">
+                  <h1 className="w-[70%] lg:w-[40%] mx-auto text-center border-4 border-b-0 border-black p-4 font-Bebas text-[52px]">
                     Awarding Growth
                   </h1>
                   <h2 className="mt-10 w-[60%] mx-auto text-center text-[24px] font-Inria">
@@ -288,34 +288,34 @@ export default function Register() {
                     through our platform. Start playing, rank up, and win.
                   </h2>
                 </div>
-                <div className="cards flex flex-col  lg:flex-row items-center justify-between mt-20">
-                  <div className="card hover:scale-110 transition-all duration-300 cursor-default flex flex-col items-center relative rotate-[-2deg] lg:rotate-[-5deg] max-w-[364px] rounded-md h-[464px] w-full bg-[#c084Fc] border-4 border-black shadow-cool2">
-                    <img className="mt-20 scale-125" src={cards} alt="" />
+                <div className="cards flex flex-col  lg:flex-row items-center justify-center space-x-20 mt-20">
+                  <div className="card transition-all duration-300 cursor-default flex flex-col items-center relative rotate-[-2deg] max-w-[324px] rounded-md h-[404px] w-full bg-[#c084Fc] border-4 border-black shadow-cool2">
+                    <img className="mt-20" src={cards} alt="" />
                     <span
                       className="absolute top-[-30px] right-[-10px] bg-white rounded-md shadow-cool2 border-4 border-black max-w-[90px] w-full h-[100px]
                      flex justify-center items-center text-[80px] font-bold "
                     >
                       1
                     </span>
-                    <p className="leading-[48px] text-[40px] font-Bebas w-[70%] mt-12 text-center">
+                    <p className="leading-[38px] text-[32px] font-Bebas w-[70%] mt-12 text-center">
                       Create an Account & Start Playing.
                     </p>
                   </div>
-                  <div className="card hover:scale-110 transition-all duration-300 cursor-default mt-6 lg:mt-0 flex flex-col items-center relative max-w-[364px] translate-y-[8%] rounded-md h-[464px] w-full bg-[#fb923c] border-4 border-black shadow-cool2">
-                    <img className="mt-20 scale-125" src={rank} alt="" />
+                  <div className="card rotate-[-2deg] transition-all duration-300 cursor-default mt-6 lg:mt-0 flex flex-col items-center relative max-w-[324px] translate-y-[8%] rounded-md h-[404px] w-full bg-[#fb923c] border-4 border-black shadow-cool2">
+                    <img className="mt-20" src={rank} alt="" />
                     <span
                       className="absolute top-[-30px] right-[-10px] bg-white rounded-md shadow-cool2 border-4 border-black max-w-[90px] w-full h-[100px]
                      flex justify-center items-center text-[80px] font-bold "
                     >
                       2
                     </span>
-                    <p className="leading-[48px] text-[40px] font-Bebas w-[80%] mt-10 text-center">
+                    <p className="leading-[38px] text-[32px] font-Bebas w-[80%] mt-10 text-center">
                       Play quizzes, learn, and rank up.
                     </p>
                   </div>
-                  <div className="card hover:scale-110 transition-all duration-300 cursor-default mt-28 lg:mt-0 rotate-[2deg] flex flex-col items-center relative max-w-[364px] lg:rotate-[4deg] rounded-md h-[464px] w-full bg-[#fde047] border-4 border-black shadow-cool2">
+                  <div className="card rotate-[-2deg] transition-all duration-300 cursor-default mt-28 lg:mt-0 flex flex-col items-center relative max-w-[324px] rounded-md h-[404px] w-full bg-[#fde047] border-4 border-black shadow-cool2">
                     <img
-                      className="mt-20 scale-125 rotate-[-4deg]"
+                      className="mt-20 rotate-[-5deg]"
                       src={trophy}
                       alt=""
                     />
@@ -325,7 +325,7 @@ export default function Register() {
                     >
                       3
                     </span>
-                    <p className="leading-[48px] text-[40px] font-Bebas w-[80%] mt-12 text-center">
+                    <p className="leading-[38px] text-[32px] font-Bebas w-[80%] mt-12 text-center">
                       Gain points, spin the wheel & win big.
                     </p>
                   </div>
@@ -335,32 +335,12 @@ export default function Register() {
                   src={arrow1}
                   alt=""
                 />
-                <img
-                  className="absolute rotate-[80deg] -bottom-[50%] opacity-0 md:opacity-100 lg:rotate-0 lg:bottom-[30px] lg:left-[210px] z-50"
-                  src={arrow2}
-                  alt=""
-                />
-                <img
-                  className="absolute rotate-[80deg] top-[85%] right-[7%] opacity-0 md:opacity-100 lg:top-[265px] lg:right-[240px] lg:rotate-[-5deg]"
-                  src={arrow3}
-                  alt=""
-                />
-                <img
-                  className="absolute top-[100px] right-[-45px] lg:opacity-80 opacity-0"
-                  src={triviagames}
-                  alt=""
-                />
               </section>
 
               <div className="md:w-[60%] w-[80%] mt-[1250px] sm:mt-[1150px] md:mt-[1000px] lg:mt-0 max-w-[1280px] mx-auto border-t-[6px] border-black mb-[132px]"></div>
 
               <section className="h-[100vh] max-w-[1280px] mx-auto relative">
-                <img
-                  className="absolute top-[20%] right-[20%] rotate-[2.5deg] lg:opacity-80 opacity-0"
-                  src={community}
-                  alt=""
-                />
-                <h1 className="bg-white w-[80%] lg:w-[50%] mx-auto text-center border-4 border-black p-4 rounded-md rotate-[1.5deg] shadow-cool2 font-Bebas text-[64px]">
+                <h1 className=" w-[70%] lg:w-[40%] mx-auto text-center border-4 border-b-0 border-black p-4 font-Bebas text-[52px]">
                   Compete With Friends
                 </h1>
                 <div className="mt-28 flex flex-col-reverse  lg:flex-row">
@@ -377,7 +357,7 @@ export default function Register() {
                           <h1 className="text-[40px] font-Bebas leading-[43px]">
                             Find out what you know
                           </h1>
-                          <h2 className="font-Inria w-[70%] text-[24px] leading-[19px]">
+                          <h2 className="font-Inria w-[70%] text-[24px] leading-[25px]">
                             After creating an account, start playing free trivia
                             quizzes to start learning.
                           </h2>
@@ -391,7 +371,7 @@ export default function Register() {
                           <h1 className="text-[40px] font-Bebas leading-[43px]">
                             Connect with friends
                           </h1>
-                          <h2 className="font-Inria w-[70%] text-[24px] leading-[19px]">
+                          <h2 className="font-Inria w-[70%] text-[24px] leading-[25px]">
                             Add your friends and family then freely compete against each other.
                           </h2>
                         </div>
@@ -404,7 +384,7 @@ export default function Register() {
                           <h1 className="text-[40px] font-Bebas leading-[43px]">
                             Start competing
                           </h1>
-                          <h2 className="font-Inria w-[70%] text-[24px] leading-[19px]">
+                          <h2 className="font-Inria w-[70%] text-[24px] leading-[25px]">
                             Compete against people all over the world in head to head trivia games. 
                           </h2>
                         </div>
@@ -412,20 +392,16 @@ export default function Register() {
                     </ul>
                   </div>
                   <figure
-                    className="lg:w-[50%] w-[70%] mx-auto lg:mx-0 translate-y-[-5%] lg:rotate-[3deg] scale-[135%] "
-                    ref={friendsRef}
-                  ></figure>
+                    className="lg:w-[40%] w-[70%] ml-12 mt-24 flex justify-center items-center " 
+                  >
+                    <img className="rounded-tl-[80px] rounded-br-[80px] shadow-cool2 border-4 border-black" src={comp} alt="" />
+                  </figure>
                 </div>
               </section>
 
               <section className="h-[100vh] mt-[640px] sm:mt-[400px] lg:mt-0 max-w-[1280px] mx-auto relative">
-                <img
-                  className="absolute top-[150px] right-[15px] opacity-0 lg:opacity-80"
-                  src={bigprizes}
-                  alt=""
-                />
 
-                <h1 className="bg-white w-[80%] lg:w-[50%] mx-auto text-center border-4 border-black p-4 rounded-md rotate-[-1deg] shadow-cool2 font-Bebas text-[64px]">
+                <h1 className="w-[70%] lg:w-[40%] mx-auto text-center border-4 border-b-0 border-black p-4 font-Bebas text-[52px]">
                   How to win
                 </h1>
                 <div className="mt-24 flex flex-col  lg:flex-row justify-between items-center">
@@ -446,11 +422,11 @@ export default function Register() {
                       >
                       spin the wheel
                     </button>
-                    <img
+                    {/* <img
                       className="absolute opacity-0 sm:opacity-100 sm:right-[-65%] md:right-[-50%] lg:right-[-85%]  top-0"
                       src={wheelArrow}
                       alt=""
-                    />
+                    /> */}
 
                     </div>
                   </div>
