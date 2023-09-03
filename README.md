@@ -9,9 +9,9 @@
 <h3 align="center">dayZtrivia</h3>
 
   <p align="center">
-    Fullstack trivia game with 32 available genres and 3 difficulties in a multiple choice format. Features include Firebase account creation and sign in/sign out,
-    fully functionaly leaderboard that displays rank-user-points, 10 second timer for each question, shows right answer when you guess, as well as a results page 
-    displaying all the answers and your choices, as well as your score. Points save to your account when you logout. 
+    Developed a fully functional and well designed trivia application with multiple pages and user authentication. 
+    App features 32 genres, 500,000+ questions, 3 difficulties, a spin the wheel, leaderboard and ranking system, as well as a results page. 
+    Perplexed is creatively designed, has a good user experience, and is fully functional.
     <br />
     <a href="https://github.com/dayZgarden/dayZtrivia"><strong>Explore the docs »</strong></a>
     <br />
@@ -107,7 +107,6 @@ Don't forget to give the project a star! Thanks again!
 ## Contact
 
 * [![linkedin][linkedin]][linkedin-url]
-* [![twitter][twitter]][twitter-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
