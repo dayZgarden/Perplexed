@@ -1,9 +1,9 @@
-# dayZtrivia
+# Perplexed
 
 <br />
 <div align="center">
   <a target="_blank" href="https://day-ztrivia.vercel.app/">
-    <img src="https://user-images.githubusercontent.com/106930540/183218305-ee70be2e-fe81-4d9a-bbd2-20bbe4277077.png" alt="Logo" width="1000" height="800">
+    <img src="https://cdn.discordapp.com/attachments/880274195093811313/1147916206192476170/perplex.JPG" alt="Logo" width="1000" height="800">
   </a>
 
 <h3 align="center">dayZtrivia</h3>
