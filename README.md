@@ -6,7 +6,7 @@
     <img src="https://cdn.discordapp.com/attachments/880274195093811313/1147916206192476170/perplex.JPG" alt="Logo" width="1000" height="800">
   </a>
 
-<h3 align="center">dayZtrivia</h3>
+<h3 align="center">Perplexed</h3>
 
   <p align="center">
     Developed a fully functional and well designed trivia application with multiple pages and user authentication. 
